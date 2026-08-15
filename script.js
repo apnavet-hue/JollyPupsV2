@@ -12,8 +12,85 @@ const loadIncludes = async () => {
   );
 };
 
+const cleanPageSlugs = new Set(["services", "marketplace", "contact"]);
+
+const getSiteBasePath = () => {
+  if (window.location.protocol === "file:") {
+    return "";
+  }
+
+  const pathname = window.location.pathname.replace(/\/+$/, "");
+  const segments = pathname.split("/").filter(Boolean);
+  const lastSegment = segments[segments.length - 1] || "";
+
+  if (lastSegment.includes(".") || cleanPageSlugs.has(lastSegment)) {
+    segments.pop();
+  }
+
+  return segments.length ? `/${segments.join("/")}/` : "/";
+};
+
+const getCurrentPage = () => {
+  const pathname = window.location.pathname.replace(/\/+$/, "");
+  const lastSegment = pathname.split("/").filter(Boolean).pop() || "";
+
+  if (cleanPageSlugs.has(lastSegment)) {
+    return `${lastSegment}.html`;
+  }
+
+  return lastSegment.endsWith(".html") ? lastSegment : "index.html";
+};
+
+const resolveSitePath = (path) => {
+  const basePath = getSiteBasePath();
+  return `${basePath}${path}`.replace(/\/{2,}/g, "/");
+};
+
+const applyCleanRoutes = () => {
+  const routes = {
+    home: "",
+    services: "services/",
+    marketplace: "marketplace/",
+    contact: "contact/",
+    about: "#about",
+    faq: "contact/#faq",
+    shop: "marketplace/#shop",
+  };
+
+  document.querySelectorAll("[data-route]").forEach((link) => {
+    const route = routes[link.dataset.route];
+    if (route !== undefined) {
+      link.href = resolveSitePath(route);
+    }
+  });
+
+  document.querySelectorAll("[data-asset]").forEach((asset) => {
+    asset.src = resolveSitePath(asset.dataset.asset);
+  });
+};
+
+const redirectLegacyHtmlPath = () => {
+  if (window.location.protocol === "file:") {
+    return;
+  }
+
+  const legacyRoutes = {
+    "services.html": "services/",
+    "marketplace.html": "marketplace/",
+    "contact.html": "contact/",
+  };
+  const currentFile = window.location.pathname.split("/").pop();
+  const cleanRoute = legacyRoutes[currentFile];
+
+  if (cleanRoute) {
+    window.location.replace(`${resolveSitePath(cleanRoute)}${window.location.hash}`);
+  }
+};
+
 const initSharedHeader = () => {
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  applyCleanRoutes();
+
+  const currentPage = getCurrentPage();
   const headerAction = currentPage === "marketplace.html" ? "bag" : "book";
 
   document.querySelectorAll("[data-header-action]").forEach((action) => {
@@ -21,16 +98,17 @@ const initSharedHeader = () => {
   });
 
   document.querySelectorAll(".main-nav a").forEach((link) => {
-    const [linkPage = "index.html", linkHash = ""] = link.getAttribute("href").split("#");
+    const [linkPage = "index.html", linkHash = ""] = (link.dataset.page || link.getAttribute("href")).split("#");
     const isSamePage = (linkPage || "index.html") === currentPage;
     const isActive =
-      isSamePage && (currentPage !== "index.html" || `#${linkHash}` === window.location.hash);
+      isSamePage && (currentPage !== "index.html" || !linkHash || `#${linkHash}` === window.location.hash);
 
     link.classList.toggle("nav-active", isActive);
   });
 };
 
 const initPage = async () => {
+redirectLegacyHtmlPath();
 await loadIncludes();
 initSharedHeader();
 
