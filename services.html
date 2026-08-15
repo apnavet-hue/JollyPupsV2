@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,18 +9,16 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta property="og:image" content="/assets/icon-512.png" />
     <title>Services | Jolly Pups Paradise</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=policy-pages-1" />
     <link
       rel="preload"
       as="image"
-      href="assets/jolly-pups-inclusive-hero-480.webp"
-      imagesrcset="assets/jolly-pups-inclusive-hero-480.webp 480w, assets/jolly-pups-inclusive-hero-720.webp 720w, assets/jolly-pups-inclusive-hero-960.webp 960w"
+      href="/assets/jolly-pups-inclusive-hero-480.avif"
+      imagesrcset="/assets/jolly-pups-inclusive-hero-480.avif 480w, /assets/jolly-pups-inclusive-hero-720.avif 720w, /assets/jolly-pups-inclusive-hero-960.avif 960w"
       imagesizes="(max-width: 700px) 82vw, (max-width: 900px) 52vw, 520px"
       fetchpriority="high"
+      type="image/avif"
     />
+    <link rel="stylesheet" href="/styles.min.css?v=perf-2" />
   </head>
   <body>
       
@@ -29,7 +27,51 @@
 </div>
       <div class="cursor-dot"></div>
 <div class="cursor-ring"></div>
-    <div data-include="header.html?v=policy-pages-1"></div>
+    <div class="announcement">
+  <p>Inclusive pet care, at the farm and home.</p>
+  <a href="/services/" data-route="services">Explore pet care <span aria-hidden="true">&nearr;</span></a>
+</div>
+
+<header class="site-header inner-header">
+  <a class="brand" href="/" data-route="home" aria-label="Jolly Pups Paradise home">
+    <img
+      class="brand-logo brand-logo-supplied brand-logo-horizontal"
+      src="/assets/jolly-pups-paradise-logo-final-360.webp"
+      srcset="/assets/jolly-pups-paradise-logo-final-220.webp 220w, /assets/jolly-pups-paradise-logo-final-360.webp 360w"
+      sizes="(max-width: 700px) 108px, 190px"
+      width="360"
+      height="114"
+      decoding="async"
+      alt="Jolly Pups Paradise"
+    />
+  </a>
+
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span class="sr-only">Toggle menu</span>
+  </button>
+
+  <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
+    <a href="/" data-route="home" data-page="index.html">Home</a>
+    <a href="/services/" data-route="services" data-page="services.html">Services</a>
+    <a href="/marketplace/" data-route="marketplace" data-page="marketplace.html">Marketplace</a>
+    <a href="/#about" data-route="about" data-page="index.html">Why Us</a>
+    <a href="/contact/" data-route="contact" data-page="contact.html">Contact</a>
+  </nav>
+
+  <button class="header-cta js-book" data-header-action="book" type="button" hidden>
+    Book a stay
+    <span aria-hidden="true">&nearr;</span>
+  </button>
+
+  <a class="bag-pill" data-header-action="bag" href="/marketplace/#shop" data-route="shop" aria-label="Shopping bag" hidden>
+    <span class="bag-icon">+</span>
+    <span class="cart-label">Your bag</span>
+    <b class="cart-count">0</b>
+  </a>
+</header>
 
     <main>
       <section class="page-hero services-page-hero">
@@ -41,28 +83,34 @@
         </div>
         <div class="services-hero-art" aria-hidden="true">
           <div class="art-circle art-circle-main">
-            <img
-              src="assets/jolly-pups-inclusive-hero-480.webp"
-              srcset="assets/jolly-pups-inclusive-hero-480.webp 480w, assets/jolly-pups-inclusive-hero-720.webp 720w, assets/jolly-pups-inclusive-hero-960.webp 960w"
-              sizes="(max-width: 700px) 82vw, (max-width: 900px) 52vw, 520px"
-              width="960"
-              height="1440"
-              fetchpriority="high"
-              decoding="async"
-              alt=""
-            />
+            <picture>
+              <source type="image/avif" srcset="/assets/jolly-pups-inclusive-hero-480.avif 480w, /assets/jolly-pups-inclusive-hero-720.avif 720w, /assets/jolly-pups-inclusive-hero-960.avif 960w" sizes="(max-width: 700px) 82vw, (max-width: 900px) 52vw, 520px" />
+              <img
+                src="/assets/jolly-pups-inclusive-hero-480.webp"
+                srcset="/assets/jolly-pups-inclusive-hero-480.webp 480w, /assets/jolly-pups-inclusive-hero-720.webp 720w, /assets/jolly-pups-inclusive-hero-960.webp 960w"
+                sizes="(max-width: 700px) 82vw, (max-width: 900px) 52vw, 520px"
+                width="960"
+                height="1440"
+                fetchpriority="high"
+                decoding="async"
+                alt=""
+              />
+            </picture>
           </div>
           <div class="art-circle art-circle-small">
-            <img
-              src="assets/jolly-pups-inclusive-board-480.webp"
-              srcset="assets/jolly-pups-inclusive-board-480.webp 480w, assets/jolly-pups-inclusive-board-768.webp 768w"
-              sizes="174px"
-              width="480"
-              height="320"
-              loading="lazy"
-              decoding="async"
-              alt=""
-            />
+            <picture>
+              <source type="image/avif" srcset="/assets/jolly-pups-inclusive-board-480.avif 480w, /assets/jolly-pups-inclusive-board-768.avif 768w" sizes="174px" />
+              <img
+                src="/assets/jolly-pups-inclusive-board-480.webp"
+                srcset="/assets/jolly-pups-inclusive-board-480.webp 480w, /assets/jolly-pups-inclusive-board-768.webp 768w"
+                sizes="174px"
+                width="480"
+                height="320"
+                loading="lazy"
+                decoding="async"
+                alt=""
+              />
+            </picture>
           </div>
           <div class="hero-badge badge-bottom services-badge"><strong>7</strong><span>farm and at-home care options</span></div>
         </div>
@@ -127,10 +175,58 @@
         <button class="button button-light js-book" type="button">Talk to our care team <span>&rarr;</span></button>
       </section>
     </main>
-    <div data-include="footer.html?v=policy-pages-1"></div>
+    <footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a class="brand brand-footer" href="/" data-route="home" aria-label="Jolly Pups Paradise home">
+        <img
+          class="brand-logo brand-logo-footer brand-logo-supplied brand-logo-horizontal"
+          src="/assets/jolly-pups-paradise-logo-final-360.webp"
+          srcset="/assets/jolly-pups-paradise-logo-final-220.webp 220w, /assets/jolly-pups-paradise-logo-final-360.webp 360w"
+          sizes="(max-width: 700px) 108px, 190px"
+          width="360"
+          height="114"
+          loading="lazy"
+          decoding="async"
+          alt="Jolly Pups Paradise"
+        />
+      </a>
+      <p>Pet farm daycare, boarding,<br />at-home care, and training.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <strong>Explore</strong>
+        <a href="/services/" data-route="services">Services</a>
+        <a href="/marketplace/" data-route="marketplace">Marketplace</a>
+        <a href="/contact/" data-route="contact">Contact</a>
+      </div>
+      <div>
+        <strong>Support</strong>
+        <a href="mailto:jollypupsparadise@gmail.com">jollypupsparadise@gmail.com</a>
+        <a href="tel:+919034442877">+91 90344 42877</a>
+        <a href="tel:+919306140951">+91 93061 40951</a>
+        <a href="tel:+919034268827">+91 90342 68827</a>
+        <a href="https://share.google/z2TgRuoScfprGwPFZ" target="_blank" rel="noopener">Sector 91, Gurugram, Haryana 122505</a>
+        <a href="/faqs/" data-route="faqs">FAQs</a>
+        <div class="footer-policy-mobile">
+          <a href="/privacy/" data-route="privacy">Privacy</a>
+          <a href="/terms/" data-route="terms">Terms</a>
+        </div>
+      </div>
+      <div>
+        <strong>Follow</strong>
+        <a href="https://www.instagram.com/jollypups_paradise/" target="_blank" rel="noopener">@jollypups_paradise</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Jolly Pups Paradise. All rights reserved.</span>
+    <div><a href="/privacy/" data-route="privacy">Privacy</a><a href="/terms/" data-route="terms">Terms</a></div>
+  </div>
+</footer>
 
     <dialog class="booking-modal"><button class="modal-close" type="button" aria-label="Close booking form">&times;</button><p class="section-kicker">Book a visit</p><h2>Let's plan the right<br /><em>care for your pet.</em></h2><p>Leave your details and our care team will call you back shortly.</p><form class="booking-form"><label><span>Your name</span><input type="text" name="name" placeholder="Enter your name" required /></label><label><span>Phone number</span><input type="tel" name="phone" placeholder="+91 90344 42877" required /></label><label><span>I need help with</span><select name="care"><option>General guidance</option><option value="Pet day care">Pet day care</option><option value="Overnight boarding">Overnight boarding</option><option value="Long pet boarding">Long pet boarding</option><option value="Grooming">Grooming</option><option value="Vet consultation">Vet consultation</option><option value="Vaccinations">Vaccinations</option><option value="Training">Training</option></select></label><label class="service-location-field" hidden><span>Service location</span><select name="serviceLocation"><option value="">Choose at home or at farm</option><option>At home</option><option>At farm</option></select></label><button class="button button-dark" type="submit">Request a callback <span>&rarr;</span></button></form></dialog>
     <div class="toast" role="status" aria-live="polite"><strong>Request received.</strong><span>Our care team will call you shortly.</span></div>
-    <script src="script.js?v=policy-pages-1"></script>
+    <script src="/script.js?v=perf-2" defer></script>
   </body>
 </html>

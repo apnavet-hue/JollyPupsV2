@@ -1,17 +1,3 @@
-const loadIncludes = async () => {
-  const includeTargets = document.querySelectorAll("[data-include]");
-
-  await Promise.all(
-    Array.from(includeTargets).map(async (target) => {
-      const response = await fetch(target.dataset.include);
-      if (!response.ok) {
-        throw new Error(`Unable to load ${target.dataset.include}`);
-      }
-      target.outerHTML = await response.text();
-    })
-  );
-};
-
 const cleanPageSlugs = new Set(["services", "marketplace", "contact", "privacy", "faqs", "terms"]);
 
 const getSiteBasePath = () => {
@@ -123,9 +109,8 @@ const initSharedHeader = () => {
   });
 };
 
-const initPage = async () => {
+const initPage = () => {
 redirectLegacyHtmlPath();
-await loadIncludes();
 initSharedHeader();
 
 const menuToggle = document.querySelector(".menu-toggle");
@@ -366,6 +351,7 @@ if(dot && ring){
 
 /* ========= CINEMATIC PARALLAX ========= */
 
+if (!isTouchOrMobile) {
 const parallaxElement =
   document.querySelector(".hero-image-wrap") ||
   document.querySelector(".art-circle-main") ||
@@ -383,6 +369,7 @@ if (parallaxElement) {
 
   });
 
+}
 }
 
 /* FLOATING PAW SCROLL INDICATOR */
@@ -423,6 +410,7 @@ if(pawProgress){
 
 /* SPOTLIGHT CARD EFFECT */
 
+if (!isTouchOrMobile) {
 document.querySelectorAll(
 '.service-card, .story-card, .catalog-card, .product-card, .contact-option'
 ).forEach(card => {
@@ -440,9 +428,11 @@ document.querySelectorAll(
     });
 
 });
+}
 
 /* MAGNETIC BUTTONS */
 
+if (!isTouchOrMobile) {
 document.querySelectorAll(
 '.button, .header-cta, .catalog-action'
 ).forEach(button => {
@@ -470,6 +460,7 @@ document.querySelectorAll(
     });
 
 });
+}
 
 
 /* TEXT HIGHLIGHT SWEEP */
@@ -523,6 +514,8 @@ cards.forEach(card=>{
 });
 };
 
-initPage().catch((error) => {
+try {
+  initPage();
+} catch (error) {
   console.error(error);
-});
+}
