@@ -6,4 +6,7 @@ DirectoryIndex index.html
   RewriteRule ^services/?$ services/index.html [L]
   RewriteRule ^marketplace/?$ marketplace/index.html [L]
   RewriteRule ^contact/?$ contact/index.html [L]
+  RewriteRule ^privacy/?$ privacy/index.html [L]
+  RewriteRule ^faqs/?$ faqs/index.html [L]
+  RewriteRule ^terms/?$ terms/index.html [L]
 </IfModule>

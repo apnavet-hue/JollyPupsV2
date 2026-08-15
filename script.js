@@ -12,7 +12,7 @@ const loadIncludes = async () => {
   );
 };
 
-const cleanPageSlugs = new Set(["services", "marketplace", "contact"]);
+const cleanPageSlugs = new Set(["services", "marketplace", "contact", "privacy", "faqs", "terms"]);
 
 const getSiteBasePath = () => {
   if (window.location.protocol === "file:") {
@@ -52,8 +52,10 @@ const applyCleanRoutes = () => {
     services: "services/",
     marketplace: "marketplace/",
     contact: "contact/",
+    privacy: "privacy/",
+    faqs: "faqs/",
+    terms: "terms/",
     about: "#about",
-    faq: "contact/#faq",
     shop: "marketplace/#shop",
   };
 
@@ -88,6 +90,9 @@ const redirectLegacyHtmlPath = () => {
     "services.html": "services/",
     "marketplace.html": "marketplace/",
     "contact.html": "contact/",
+    "privacy.html": "privacy/",
+    "faqs.html": "faqs/",
+    "terms.html": "terms/",
   };
   const currentFile = window.location.pathname.split("/").pop();
   const cleanRoute = legacyRoutes[currentFile];
@@ -101,7 +106,8 @@ const initSharedHeader = () => {
   applyCleanRoutes();
 
   const currentPage = getCurrentPage();
-  const headerAction = currentPage === "marketplace.html" ? "bag" : "book";
+  const hasBookingModal = Boolean(document.querySelector(".booking-modal"));
+  const headerAction = currentPage === "marketplace.html" ? "bag" : hasBookingModal ? "book" : "";
 
   document.querySelectorAll("[data-header-action]").forEach((action) => {
     action.hidden = action.dataset.headerAction !== headerAction;
