@@ -1,0 +1,9 @@
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteRule ^services/?$ services/index.html [L]
+  RewriteRule ^marketplace/?$ marketplace/index.html [L]
+  RewriteRule ^contact/?$ contact/index.html [L]
+</IfModule>
