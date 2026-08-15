@@ -15,6 +15,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css?v=mobile-footer-polish-1" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/jolly-pups-inclusive-hero-480.webp"
+      imagesrcset="assets/jolly-pups-inclusive-hero-480.webp 480w, assets/jolly-pups-inclusive-hero-720.webp 720w, assets/jolly-pups-inclusive-hero-960.webp 960w"
+      imagesizes="(max-width: 700px) 90vw, (max-width: 900px) 63vw, 520px"
+      fetchpriority="high"
+    />
   </head>
   <body>
       
@@ -89,7 +97,13 @@
           <div class="hero-sun" aria-hidden="true"></div>
           <div class="hero-image-wrap">
             <img
-              src="assets/jolly-pups-inclusive-hero.webp"
+              src="assets/jolly-pups-inclusive-hero-480.webp"
+              srcset="assets/jolly-pups-inclusive-hero-480.webp 480w, assets/jolly-pups-inclusive-hero-720.webp 720w, assets/jolly-pups-inclusive-hero-960.webp 960w"
+              sizes="(max-width: 700px) 90vw, (max-width: 900px) 63vw, 520px"
+              width="960"
+              height="1440"
+              fetchpriority="high"
+              decoding="async"
               alt="Dogs and cats enjoying supervised care at Jolly Pups Paradise"
             />
           </div>
@@ -232,7 +246,13 @@
       <section class="about" id="about">
         <div class="about-image reveal">
           <img
-            src="assets/jolly-pups-inclusive-board.webp"
+            src="assets/jolly-pups-inclusive-board-480.webp"
+            srcset="assets/jolly-pups-inclusive-board-480.webp 480w, assets/jolly-pups-inclusive-board-768.webp 768w, assets/jolly-pups-inclusive-board-900.webp 900w, assets/jolly-pups-inclusive-board-1100.webp 1100w, assets/jolly-pups-inclusive-board-1440.webp 1440w"
+            sizes="(max-width: 900px) 100vw, 50vw"
+            width="1440"
+            height="960"
+            loading="lazy"
+            decoding="async"
             alt="A cat and dogs enjoying a calm pet boarding space with a caregiver"
           />
           <div class="image-caption">

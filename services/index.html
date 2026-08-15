@@ -9,6 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../styles.css?v=mobile-footer-polish-1" />
+    <link
+      rel="preload"
+      as="image"
+      href="../assets/jolly-pups-inclusive-hero-480.webp"
+      imagesrcset="../assets/jolly-pups-inclusive-hero-480.webp 480w, ../assets/jolly-pups-inclusive-hero-720.webp 720w, ../assets/jolly-pups-inclusive-hero-960.webp 960w"
+      imagesizes="(max-width: 700px) 82vw, (max-width: 900px) 52vw, 520px"
+      fetchpriority="high"
+    />
   </head>
   <body>
       
@@ -29,10 +37,28 @@
         </div>
         <div class="services-hero-art" aria-hidden="true">
           <div class="art-circle art-circle-main">
-            <img src="../assets/jolly-pups-inclusive-hero.webp" alt="" />
+            <img
+              src="../assets/jolly-pups-inclusive-hero-480.webp"
+              srcset="../assets/jolly-pups-inclusive-hero-480.webp 480w, ../assets/jolly-pups-inclusive-hero-720.webp 720w, ../assets/jolly-pups-inclusive-hero-960.webp 960w"
+              sizes="(max-width: 700px) 82vw, (max-width: 900px) 52vw, 520px"
+              width="960"
+              height="1440"
+              fetchpriority="high"
+              decoding="async"
+              alt=""
+            />
           </div>
           <div class="art-circle art-circle-small">
-            <img src="../assets/jolly-pups-inclusive-board.webp" alt="" />
+            <img
+              src="../assets/jolly-pups-inclusive-board-480.webp"
+              srcset="../assets/jolly-pups-inclusive-board-480.webp 480w, ../assets/jolly-pups-inclusive-board-768.webp 768w"
+              sizes="174px"
+              width="480"
+              height="320"
+              loading="lazy"
+              decoding="async"
+              alt=""
+            />
           </div>
           <div class="hero-badge badge-bottom services-badge"><strong>7</strong><span>farm and at-home care options</span></div>
         </div>

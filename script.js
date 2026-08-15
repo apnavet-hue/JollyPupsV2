@@ -67,6 +67,16 @@ const applyCleanRoutes = () => {
   document.querySelectorAll("[data-asset]").forEach((asset) => {
     asset.src = resolveSitePath(asset.dataset.asset);
   });
+
+  document.querySelectorAll("[data-srcset]").forEach((asset) => {
+    asset.srcset = asset.dataset.srcset
+      .split(",")
+      .map((candidate) => {
+        const [path, descriptor] = candidate.trim().split(/\s+/);
+        return `${resolveSitePath(path)} ${descriptor}`;
+      })
+      .join(", ");
+  });
 };
 
 const redirectLegacyHtmlPath = () => {
