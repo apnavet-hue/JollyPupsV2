@@ -109,6 +109,7 @@ img {
   left: 0;
   display: flex;
   align-items: center;
+  min-height: 67px;
   width: 100%;
   padding: 7px 5.5vw;
 }
@@ -117,6 +118,7 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 11px;
+  min-height: 53px;
   font-family: "Fraunces", Georgia, serif;
   font-size: 24px;
   font-weight: 800;
@@ -126,6 +128,7 @@ img {
 .brand-logo {
   width: clamp(190px, 17vw, 260px);
   height: auto;
+  aspect-ratio: 720 / 227;
 }
 
 .brand-logo-supplied {
@@ -1575,10 +1578,12 @@ h2 {
 
   .site-header {
     top: 28px;
+    min-height: 50px;
     padding: 5px 5vw;
   }
 
   .brand {
+    min-height: 34px;
     font-size: 21px;
   }
 
@@ -1680,6 +1685,7 @@ h2 {
     align-self: stretch;
     width: auto;
     min-width: 0;
+    min-height: 280px;
     max-width: none;
     padding: 0;
     text-align: left;
@@ -1695,12 +1701,14 @@ h2 {
   .hero h1,
   .family-headline {
     max-width: 100%;
+    min-height: 87px;
     font-size: clamp(39px, 10.7vw, 46px);
     line-height: 0.94;
   }
 
   .hero-description {
     max-width: none;
+    min-height: 62px;
     margin: 10px 0 12px;
     font-size: 14px;
     line-height: 1.45;
@@ -1718,6 +1726,7 @@ h2 {
   .hero-actions {
     justify-content: flex-start;
     gap: 0;
+    min-height: 44px;
   }
 
   .button {
@@ -1736,6 +1745,7 @@ h2 {
 
   .hero-proof {
     justify-content: flex-start;
+    min-height: 34px;
     margin-top: 10px;
   }
 
