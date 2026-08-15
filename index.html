@@ -14,19 +14,400 @@
     <title>Jolly Pups Paradise | Care that feels like family</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Nunito:wght@400;600;700;800&display=swap" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Nunito:wght@400;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Nunito:wght@400;600;700;800&display=optional"
       rel="stylesheet"
       media="print"
       onload="this.onload=null;this.media='all'"
     />
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Nunito:wght@400;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Nunito:wght@400;600;700;800&display=optional"
         rel="stylesheet"
       />
     </noscript>
+    <style>
+      @media (max-width: 700px) {
+        :root {
+          --ink: #15120b;
+          --forest: #1f1b12;
+          --forest-2: #070604;
+          --moss: #8a6a00;
+          --cream: #fff8db;
+          --paper: #fffdf2;
+          --coral: #ffc400;
+          --lime: #ffdf3d;
+          --muted: #675f4f;
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+
+        [hidden] {
+          display: none !important;
+        }
+
+        html,
+        body {
+          margin: 0;
+          overflow-x: hidden;
+        }
+
+        body {
+          color: var(--ink);
+          background: var(--cream);
+          font-family: "Nunito", Arial, sans-serif;
+          font-size: 16px;
+          -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        button {
+          border: 0;
+          font: inherit;
+        }
+
+        img {
+          display: block;
+          max-width: 100%;
+        }
+
+        .paw-progress,
+        .cursor-dot,
+        .cursor-ring,
+        .header-cta,
+        .bag-pill,
+        .hero::before,
+        .hero-sun,
+        .hero-doodle,
+        .hero-scroll,
+        .text-link {
+          display: none !important;
+        }
+
+        .announcement {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 28px;
+          padding: 6px 12px;
+          color: var(--paper);
+          background: var(--forest-2);
+          font-size: 8px;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+
+        .announcement p {
+          margin: 0;
+        }
+
+        .announcement a {
+          display: none;
+        }
+
+        .site-header.inner-header {
+          position: relative;
+          z-index: 10;
+          top: auto;
+          left: 0;
+          display: flex;
+          align-items: center;
+          min-height: 50px;
+          width: 100%;
+          padding: 6px 5vw;
+          background: rgba(255, 248, 219, 0.94);
+        }
+
+        .brand {
+          display: inline-flex;
+          align-items: center;
+          min-height: 34px;
+        }
+
+        .site-header .brand-logo-supplied {
+          width: 108px;
+          height: auto;
+          aspect-ratio: 720 / 227;
+          object-fit: contain;
+        }
+
+        .menu-toggle {
+          position: relative;
+          z-index: 12;
+          display: grid;
+          gap: 4px;
+          margin-left: auto;
+          padding: 6px;
+          background: transparent;
+        }
+
+        .menu-toggle span:not(.sr-only) {
+          display: block;
+          width: 23px;
+          height: 2px;
+          background: var(--forest);
+        }
+
+        .sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+        }
+
+        .main-nav {
+          position: fixed;
+          z-index: 11;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 21px;
+          align-items: center;
+          justify-content: center;
+          margin: 0;
+          color: #fff;
+          background: var(--forest);
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .hero {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+          min-height: 0;
+          padding: 88px 5vw 20px;
+          overflow: hidden;
+        }
+
+        .whatsapp-pill,
+        .locate-pill {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+          justify-content: center;
+          align-self: stretch;
+          width: 90vw;
+          min-height: 40px;
+          padding: 9px 11px;
+          border-radius: 999px;
+          font-size: 11px;
+          font-weight: 700;
+          box-shadow: 0 15px 35px rgba(31, 27, 18, 0.25);
+        }
+
+        .whatsapp-pill {
+          color: #fff;
+          background: var(--forest);
+        }
+
+        .locate-pill {
+          color: var(--forest-2);
+          background: var(--coral);
+        }
+
+        .whatsapp-pill svg,
+        .locate-pill svg {
+          width: 22px;
+          height: 22px;
+          fill: none;
+          stroke: currentColor;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-width: 1.5;
+        }
+
+        .hero-copy {
+          order: 1;
+          align-self: stretch;
+          min-height: 280px;
+          min-width: 0;
+          width: 90vw;
+          max-width: 90vw;
+          text-align: left;
+        }
+
+        .eyebrow {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          margin: 0 0 8px;
+          color: var(--moss);
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+        }
+
+        .eyebrow-dot {
+          width: 9px;
+          height: 9px;
+          border-radius: 50%;
+          background: var(--coral);
+          box-shadow: 0 0 0 4px rgba(255, 196, 0, 0.16);
+        }
+
+        .family-headline {
+          max-width: 100%;
+          min-height: 87px;
+          margin: 0;
+          font-family: "Fraunces", Arial, sans-serif;
+          font-size: clamp(39px, 10.7vw, 46px);
+          font-weight: 800;
+          line-height: 0.94;
+        }
+
+        .family-headline em {
+          color: #9c7200;
+          font-family: Georgia, "Times New Roman", serif;
+          font-weight: 400;
+        }
+
+        .hero-description {
+          min-height: 62px;
+          margin: 10px 0 12px;
+          color: var(--muted);
+          font-size: 14px;
+          line-height: 1.45;
+          overflow-wrap: anywhere;
+        }
+
+        .service-word {
+          font-weight: 800;
+        }
+
+        .hero-actions {
+          display: flex;
+          min-height: 44px;
+        }
+
+        .button {
+          display: inline-flex;
+          gap: 13px;
+          align-items: center;
+          justify-content: center;
+          min-height: 44px;
+          width: 100%;
+          padding: 11px 17px;
+          border-radius: 999px;
+          font-size: 13px;
+          font-weight: 700;
+        }
+
+        .button-primary {
+          color: var(--forest-2);
+          background: var(--coral);
+        }
+
+        .hero-proof {
+          display: flex;
+          gap: 13px;
+          align-items: center;
+          min-height: 34px;
+          margin-top: 10px;
+        }
+
+        .proof-avatars {
+          display: flex;
+        }
+
+        .proof-avatars span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 34px;
+          height: 34px;
+          margin-right: -8px;
+          border: 2px solid var(--cream);
+          border-radius: 50%;
+          color: var(--paper);
+          background: var(--forest);
+          font-size: 9px;
+          font-weight: 700;
+        }
+
+        .proof-avatars span:nth-child(2) {
+          background: var(--coral);
+        }
+
+        .proof-avatars span:nth-child(3) {
+          background: #9a7a14;
+        }
+
+        .hero-proof strong,
+        .hero-proof small {
+          display: block;
+        }
+
+        .hero-proof strong {
+          font-family: "Fraunces", Arial, sans-serif;
+          font-size: 14px;
+        }
+
+        .hero-proof small {
+          margin-top: 2px;
+          color: var(--muted);
+          font-size: 11px;
+        }
+
+        .hero-visual {
+          position: relative;
+          order: 2;
+          width: 90vw;
+          max-width: 90vw;
+          height: 218px;
+        }
+
+        .hero-image-wrap {
+          position: absolute;
+          inset: 0 0 auto;
+          width: 100%;
+          height: 204px;
+          overflow: hidden;
+          border: 6px solid rgba(255, 253, 248, 0.74);
+          border-radius: 102px 102px 20px 20px;
+        }
+
+        .hero-image-wrap picture,
+        .hero-image-wrap img {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+
+        .hero-image-wrap img {
+          object-fit: cover;
+          object-position: center;
+        }
+
+        .badge-top {
+          display: none;
+        }
+
+        .badge-bottom {
+          position: absolute;
+          right: 10px;
+          bottom: 0;
+          padding: 8px 11px;
+          border-radius: 18px;
+          color: var(--paper);
+          background: rgba(31, 27, 18, 0.9);
+        }
+      }
+    </style>
     <link
       rel="preload"
       as="image"
@@ -36,7 +417,17 @@
       fetchpriority="high"
       type="image/avif"
     />
-    <link rel="stylesheet" href="/styles.min.css?v=perf-4" />
+    <link rel="stylesheet" href="/styles.min.css?v=perf-5" media="(min-width: 701px)" />
+    <link
+      rel="preload"
+      as="style"
+      href="/styles.min.css?v=perf-5"
+      media="(max-width: 700px)"
+      onload="this.onload=null;this.rel='stylesheet';this.media='all'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="/styles.min.css?v=perf-5" />
+    </noscript>
   </head>
   <body>
       
@@ -587,6 +978,6 @@
       <span>Our care team will call you shortly.</span>
     </div>
 
-    <script src="/script.js?v=perf-4" defer></script>
+    <script src="/script.js?v=perf-5" defer></script>
   </body>
 </html>
