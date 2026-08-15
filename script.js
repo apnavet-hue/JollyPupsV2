@@ -255,6 +255,25 @@ document.querySelectorAll(".shop-categories button").forEach((button) => {
   });
 });
 
+const runAfterFirstPaint = (callback) => {
+  const run = () => {
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(callback, { timeout: 1400 });
+      return;
+    }
+
+    window.setTimeout(callback, 350);
+  };
+
+  if (document.readyState === "complete") {
+    run();
+    return;
+  }
+
+  window.addEventListener("load", run, { once: true });
+};
+
+runAfterFirstPaint(() => {
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -511,6 +530,7 @@ const observer = new IntersectionObserver((entries)=>{
 
 cards.forEach(card=>{
     observer.observe(card);
+});
 });
 };
 
