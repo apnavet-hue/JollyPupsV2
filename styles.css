@@ -133,6 +133,10 @@ img {
   border-radius: 0;
 }
 
+.site-header .brand-logo-supplied {
+  width: clamp(132px, 10vw, 168px);
+}
+
 .brand-logo-horizontal {
   object-fit: contain;
 }
@@ -1583,6 +1587,10 @@ h2 {
   }
 
   .brand-logo-supplied {
+    width: 108px;
+  }
+
+  .site-header .brand-logo-supplied {
     width: 108px;
   }
 
