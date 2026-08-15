@@ -1,18 +1,4 @@
-const loadIncludes = async () => {
-  const includeTargets = document.querySelectorAll("[data-include]");
-
-  await Promise.all(
-    Array.from(includeTargets).map(async (target) => {
-      const response = await fetch(target.dataset.include);
-      if (!response.ok) {
-        throw new Error(`Unable to load ${target.dataset.include}`);
-      }
-      target.outerHTML = await response.text();
-    })
-  );
-};
-
-const cleanPageSlugs = new Set(["services", "marketplace", "contact"]);
+const cleanPageSlugs = new Set(["services", "marketplace", "contact", "privacy", "faqs", "terms"]);
 
 const getSiteBasePath = () => {
   if (window.location.protocol === "file:") {
@@ -52,8 +38,10 @@ const applyCleanRoutes = () => {
     services: "services/",
     marketplace: "marketplace/",
     contact: "contact/",
+    privacy: "privacy/",
+    faqs: "faqs/",
+    terms: "terms/",
     about: "#about",
-    faq: "contact/#faq",
     shop: "marketplace/#shop",
   };
 
@@ -67,6 +55,16 @@ const applyCleanRoutes = () => {
   document.querySelectorAll("[data-asset]").forEach((asset) => {
     asset.src = resolveSitePath(asset.dataset.asset);
   });
+
+  document.querySelectorAll("[data-srcset]").forEach((asset) => {
+    asset.srcset = asset.dataset.srcset
+      .split(",")
+      .map((candidate) => {
+        const [path, descriptor] = candidate.trim().split(/\s+/);
+        return `${resolveSitePath(path)} ${descriptor}`;
+      })
+      .join(", ");
+  });
 };
 
 const redirectLegacyHtmlPath = () => {
@@ -78,6 +76,9 @@ const redirectLegacyHtmlPath = () => {
     "services.html": "services/",
     "marketplace.html": "marketplace/",
     "contact.html": "contact/",
+    "privacy.html": "privacy/",
+    "faqs.html": "faqs/",
+    "terms.html": "terms/",
   };
   const currentFile = window.location.pathname.split("/").pop();
   const cleanRoute = legacyRoutes[currentFile];
@@ -91,7 +92,8 @@ const initSharedHeader = () => {
   applyCleanRoutes();
 
   const currentPage = getCurrentPage();
-  const headerAction = currentPage === "marketplace.html" ? "bag" : "book";
+  const hasBookingModal = Boolean(document.querySelector(".booking-modal"));
+  const headerAction = currentPage === "marketplace.html" ? "bag" : hasBookingModal ? "book" : "";
 
   document.querySelectorAll("[data-header-action]").forEach((action) => {
     action.hidden = action.dataset.headerAction !== headerAction;
@@ -107,9 +109,8 @@ const initSharedHeader = () => {
   });
 };
 
-const initPage = async () => {
+const initPage = () => {
 redirectLegacyHtmlPath();
-await loadIncludes();
 initSharedHeader();
 
 const menuToggle = document.querySelector(".menu-toggle");
@@ -350,6 +351,7 @@ if(dot && ring){
 
 /* ========= CINEMATIC PARALLAX ========= */
 
+if (!isTouchOrMobile) {
 const parallaxElement =
   document.querySelector(".hero-image-wrap") ||
   document.querySelector(".art-circle-main") ||
@@ -367,6 +369,7 @@ if (parallaxElement) {
 
   });
 
+}
 }
 
 /* FLOATING PAW SCROLL INDICATOR */
@@ -407,6 +410,7 @@ if(pawProgress){
 
 /* SPOTLIGHT CARD EFFECT */
 
+if (!isTouchOrMobile) {
 document.querySelectorAll(
 '.service-card, .story-card, .catalog-card, .product-card, .contact-option'
 ).forEach(card => {
@@ -424,9 +428,11 @@ document.querySelectorAll(
     });
 
 });
+}
 
 /* MAGNETIC BUTTONS */
 
+if (!isTouchOrMobile) {
 document.querySelectorAll(
 '.button, .header-cta, .catalog-action'
 ).forEach(button => {
@@ -454,6 +460,7 @@ document.querySelectorAll(
     });
 
 });
+}
 
 
 /* TEXT HIGHLIGHT SWEEP */
@@ -507,6 +514,8 @@ cards.forEach(card=>{
 });
 };
 
-initPage().catch((error) => {
+try {
+  initPage();
+} catch (error) {
   console.error(error);
-});
+}
