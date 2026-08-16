@@ -2950,8 +2950,8 @@ h2 {
 .contact-options {
   display: grid;
   gap: 17px;
-  padding-top: 95px;
-  padding-bottom: 108px;
+  padding-top: 78px;
+  padding-bottom: 88px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -3037,14 +3037,14 @@ h2 {
 }
 
 .legal-page {
-  padding-top: 96px;
-  padding-bottom: 126px;
+  padding-top: 76px;
+  padding-bottom: 96px;
   background: var(--cream);
 }
 
 .legal-intro {
   max-width: 820px;
-  margin-bottom: 44px;
+  margin-bottom: 30px;
 }
 
 .legal-intro p {
@@ -3054,9 +3054,8 @@ h2 {
 }
 
 .legal-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.36fr) minmax(0, 0.64fr);
-  gap: 28px;
+  display: block;
+  max-width: 940px;
 }
 
 .legal-note {
@@ -3083,7 +3082,7 @@ h2 {
 }
 
 .legal-section {
-  padding: 27px 0;
+  padding: 22px 0;
   border-top: 1px solid var(--line);
 }
 
@@ -3194,8 +3193,8 @@ h2 {
 
 .service-detail-section,
 .service-package-section {
-  padding-top: 126px;
-  padding-bottom: 126px;
+  padding-top: 104px;
+  padding-bottom: 104px;
 }
 
 .service-detail-grid {
@@ -3269,8 +3268,8 @@ h2 {
 .service-flow {
   display: grid;
   gap: 50px;
-  padding-top: 105px;
-  padding-bottom: 105px;
+  padding-top: 90px;
+  padding-bottom: 90px;
   color: var(--paper);
   background: var(--forest);
   grid-template-columns: minmax(0, 0.6fr) minmax(0, 1fr);
@@ -3380,10 +3379,31 @@ h2 {
     font-size: clamp(54px, 15vw, 62px);
   }
 
+  .services-page-hero h1 {
+    max-width: 90vw;
+    font-size: clamp(43px, 12vw, 50px);
+    line-height: 1.03;
+    overflow-wrap: break-word;
+  }
+
+  .services-page-hero .page-hero-copy > p:not(.eyebrow),
+  .service-catalog .section-heading,
+  .service-catalog .section-heading > div,
+  .service-catalog .section-heading > p {
+    width: min(280px, calc(100vw - 72px));
+    max-width: min(280px, calc(100vw - 72px));
+  }
+
   .page-hero h2,
   .market-promise h2,
   .section-heading h2 {
     font-size: clamp(42px, 12vw, 52px);
+  }
+
+  .service-catalog .section-heading h2 {
+    max-width: 90vw;
+    font-size: clamp(38px, 10.5vw, 46px);
+    overflow-wrap: break-word;
   }
 
   .page-hero-copy > p:not(.eyebrow),
@@ -3535,8 +3555,8 @@ h2 {
 
   .contact-options {
     display: block;
-    padding-top: 72px;
-    padding-bottom: 79px;
+    padding-top: 58px;
+    padding-bottom: 66px;
   }
 
   .contact-option {
@@ -3561,16 +3581,8 @@ h2 {
   }
 
   .legal-page {
-    padding-top: 70px;
-    padding-bottom: 84px;
-  }
-
-  .legal-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .legal-note {
-    order: 2;
+    padding-top: 54px;
+    padding-bottom: 66px;
   }
 
   .service-detail-hero {
@@ -3641,8 +3653,8 @@ h2 {
   .service-detail-section,
   .service-package-section,
   .service-flow {
-    padding-top: 76px;
-    padding-bottom: 78px;
+    padding-top: 62px;
+    padding-bottom: 64px;
   }
 
   .service-detail-grid,
