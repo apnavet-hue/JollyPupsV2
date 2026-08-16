@@ -1,5 +1,5 @@
 // Paste the deployed Google Apps Script Web App URL here after setup.
-const GOOGLE_SHEET_WEB_APP_URL = "";
+const GOOGLE_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxtk1_Vgil3cA7WaUumtSpvLlc-5EcHmSNGE_95X8Q9dRGVJi8NMzvuDHEZ7EMgESHC/exec";
 const cleanPageSlugs = new Set(["services", "marketplace", "contact", "privacy", "faqs", "terms"]);
 
 const getSiteBasePath = () => {
