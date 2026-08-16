@@ -11,6 +11,10 @@ const getSiteBasePath = () => {
   const segments = pathname.split("/").filter(Boolean);
   const lastSegment = segments[segments.length - 1] || "";
 
+  if (segments[0] === "services" && segments.length > 1) {
+    return "/";
+  }
+
   if (lastSegment.includes(".") || cleanPageSlugs.has(lastSegment)) {
     segments.pop();
   }
@@ -20,7 +24,12 @@ const getSiteBasePath = () => {
 
 const getCurrentPage = () => {
   const pathname = window.location.pathname.replace(/\/+$/, "");
-  const lastSegment = pathname.split("/").filter(Boolean).pop() || "";
+  const segments = pathname.split("/").filter(Boolean);
+  const lastSegment = segments[segments.length - 1] || "";
+
+  if (segments[0] === "services" && segments.length > 1) {
+    return "services.html";
+  }
 
   if (cleanPageSlugs.has(lastSegment)) {
     return `${lastSegment}.html`;
