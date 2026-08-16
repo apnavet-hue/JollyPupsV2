@@ -231,7 +231,9 @@ const initServicePage = () => {
   const slug = getServiceSlug();
   const service = servicePages[slug] || servicePages.grooming;
 
-  document.title = `${service.service} | Jolly Pups Paradise`;
+  if (document.title === "Service | Jolly Pups Paradise") {
+    document.title = `${service.service} | Jolly Pups Paradise`;
+  }
   document.querySelector("meta[name='description']")?.setAttribute("content", service.description);
 
   setText("[data-service-eyebrow]", service.eyebrow);
