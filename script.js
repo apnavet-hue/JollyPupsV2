@@ -1,3 +1,5 @@
+// Paste the deployed Google Apps Script Web App URL here after setup.
+const GOOGLE_SHEET_WEB_APP_URL = "";
 const cleanPageSlugs = new Set(["services", "marketplace", "contact", "privacy", "faqs", "terms"]);
 
 const getSiteBasePath = () => {
@@ -204,13 +206,70 @@ const showToast = (title, message) => {
   window.setTimeout(() => toast.classList.remove("is-visible"), 3600);
 };
 
+const setFormLoading = (form, isLoading) => {
+  const submitButton = form.querySelector("button[type='submit']");
+  if (!submitButton) return;
+
+  if (!submitButton.dataset.originalLabel) {
+    submitButton.dataset.originalLabel = submitButton.innerHTML;
+  }
+
+  submitButton.disabled = isLoading;
+  submitButton.setAttribute("aria-busy", String(isLoading));
+  submitButton.innerHTML = isLoading ? "Sending..." : submitButton.dataset.originalLabel;
+};
+
+const submitToGoogleSheet = async (form, type, successTitle, successMessage, afterSuccess) => {
+  if (!GOOGLE_SHEET_WEB_APP_URL) {
+    showToast("Setup needed.", "Google Sheet endpoint is not connected yet.");
+    return;
+  }
+
+  const formData = new FormData(form);
+  const payload = new URLSearchParams();
+
+  formData.forEach((value, key) => {
+    payload.append(key, value);
+  });
+
+  payload.append("type", type);
+  payload.append("page", window.location.href);
+  payload.append("userAgent", window.navigator.userAgent);
+  payload.append("submittedAt", new Date().toISOString());
+
+  setFormLoading(form, true);
+
+  try {
+    await fetch(GOOGLE_SHEET_WEB_APP_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: payload,
+    });
+
+    form.reset();
+    if (typeof afterSuccess === "function") afterSuccess();
+    showToast(successTitle, successMessage);
+  } catch (error) {
+    console.error(error);
+    showToast("Could not send.", "Please try again or call us directly.");
+  } finally {
+    setFormLoading(form, false);
+  }
+};
+
 if (bookingForm) {
-  bookingForm.addEventListener("submit", (event) => {
+  bookingForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    bookingForm.reset();
-    updateServiceLocationField();
-    closeModal();
-    showToast("Request received.", "Our care team will call you shortly.");
+    await submitToGoogleSheet(
+      bookingForm,
+      "booking",
+      "Request received.",
+      "Our care team will call you shortly.",
+      () => {
+        updateServiceLocationField();
+        closeModal();
+      }
+    );
   });
 }
 
@@ -221,10 +280,14 @@ if (whatsapp) {
 }
 
 if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    contactForm.reset();
-    showToast("Message sent.", "We will get back to you within one working day.");
+    await submitToGoogleSheet(
+      contactForm,
+      "contact",
+      "Message sent.",
+      "We will get back to you within one working day."
+    );
   });
 }
 
