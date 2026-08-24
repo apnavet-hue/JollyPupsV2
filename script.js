@@ -417,6 +417,49 @@ const prepareScrollAnimation = () => {
     ".footer-top",
     ".footer-bottom"
   ];
+  const internalRevealSelectors = [
+    ".hero-actions > *",
+    ".hero-proof > *",
+    ".service-detail-actions > *",
+    ".service-detail-stats span",
+    ".section-heading > p",
+    ".section-heading > div",
+    ".about-copy > p",
+    ".closing-copy > p",
+    ".service-chip-grid span",
+    ".service-detail-panel li",
+    ".service-package-grid h3",
+    ".service-package-grid p",
+    ".service-package-grid ul",
+    ".service-package-grid .catalog-action",
+    ".grooming-gallery img",
+    ".grooming-gallery h3",
+    ".grooming-gallery p",
+    ".service-flow-grid span",
+    ".service-flow-grid h3",
+    ".service-flow-grid p",
+    ".faq-list summary",
+    ".faq-list p",
+    ".contact-channels a",
+    ".contact-form label",
+    ".contact-form .button",
+    ".booking-steps li",
+    ".booking-form label",
+    ".booking-form .button",
+    ".catalog-card img",
+    ".catalog-card h3",
+    ".catalog-card p",
+    ".catalog-card .catalog-action",
+    ".product-card img",
+    ".product-card h3",
+    ".product-card p",
+    ".product-bottom",
+    ".legal-section h2",
+    ".legal-section p",
+    ".legal-section li",
+    ".footer-links strong",
+    ".footer-links a"
+  ];
 
   document.querySelectorAll(revealSelectors.join(",")).forEach((element, index) => {
     if (element.closest(".pet-preloader, .booking-modal, .toast") || element.classList.contains("no-scroll-reveal")) {
@@ -428,6 +471,15 @@ const prepareScrollAnimation = () => {
       element.classList.add("cinematic-section");
     }
     element.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 143}ms`);
+  });
+
+  document.querySelectorAll(internalRevealSelectors.join(",")).forEach((element, index) => {
+    if (element.closest(".pet-preloader, .booking-modal, .toast") || element.classList.contains("reveal")) {
+      return;
+    }
+
+    element.classList.add("reveal", "cinematic-inner");
+    element.style.setProperty("--reveal-delay", `${Math.min(index % 8, 7) * 96}ms`);
   });
 };
 
