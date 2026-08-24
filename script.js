@@ -159,16 +159,16 @@ if (preloader) {
     preloader.classList.add("is-hidden");
     document.body.classList.remove("preloader-active");
     document.body.classList.remove("cinematic-intro-active");
-    window.setTimeout(() => preloader.remove(), 630);
+    window.setTimeout(() => preloader.remove(), 420);
   };
 
-  const finishPreloader = () => window.setTimeout(hidePreloader, prefersReducedMotion ? 80 : 3750);
+  const finishPreloader = () => window.setTimeout(hidePreloader, prefersReducedMotion ? 80 : 2400);
 
   if (document.readyState === "complete") {
     finishPreloader();
   } else {
     window.addEventListener("load", finishPreloader, { once: true });
-    window.setTimeout(hidePreloader, 8100);
+    window.setTimeout(hidePreloader, 5200);
   }
 }
 
@@ -490,6 +490,7 @@ const revealObserver = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("is-visible");
+        window.setTimeout(() => entry.target.classList.add("reveal-done"), 2200);
         revealObserver.unobserve(entry.target);
       }
     });
@@ -727,23 +728,6 @@ document.querySelectorAll(
 
 });
 
-const cards = document.querySelectorAll('.service-card');
-
-const observer = new IntersectionObserver((entries)=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
-
-    });
-
-},{threshold:0.25});
-
-cards.forEach(card=>{
-    observer.observe(card);
-});
 });
 };
 
