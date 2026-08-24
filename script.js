@@ -125,6 +125,7 @@ redirectLegacyHtmlPath();
 initSharedHeader();
 
 const preloader = document.querySelector(".pet-preloader");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
 const modal = document.querySelector(".booking-modal");
@@ -147,14 +148,17 @@ const locationChoiceServices = new Set([
 
 if (preloader) {
   document.body.classList.add("preloader-active");
+  document.body.classList.add("cinematic-intro-active");
 
   const hidePreloader = () => {
+    document.body.classList.add("cinematic-intro-complete");
     preloader.classList.add("is-hidden");
     document.body.classList.remove("preloader-active");
+    document.body.classList.remove("cinematic-intro-active");
     window.setTimeout(() => preloader.remove(), 420);
   };
 
-  const finishPreloader = () => window.setTimeout(hidePreloader, 520);
+  const finishPreloader = () => window.setTimeout(hidePreloader, prefersReducedMotion ? 80 : 920);
 
   if (document.readyState === "complete") {
     finishPreloader();
@@ -381,6 +385,47 @@ const runAfterFirstPaint = (callback) => {
 };
 
 runAfterFirstPaint(() => {
+const prepareScrollAnimation = () => {
+  if (prefersReducedMotion) {
+    document.body.classList.add("reduced-motion");
+    return;
+  }
+
+  const revealSelectors = [
+    "main > section",
+    ".section-heading",
+    ".page-hero-copy",
+    ".hero-copy",
+    ".hero-visual",
+    ".service-detail-media",
+    ".service-card",
+    ".story-card",
+    ".catalog-card",
+    ".product-card",
+    ".contact-option",
+    ".contact-panel",
+    ".service-detail-panel",
+    ".service-package-grid article",
+    ".grooming-gallery article",
+    ".service-flow-grid article",
+    ".faq-list details",
+    ".legal-section",
+    ".footer-top",
+    ".footer-bottom"
+  ];
+
+  document.querySelectorAll(revealSelectors.join(",")).forEach((element, index) => {
+    if (element.closest(".pet-preloader, .booking-modal, .toast") || element.classList.contains("no-scroll-reveal")) {
+      return;
+    }
+
+    element.classList.add("reveal");
+    element.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 70}ms`);
+  });
+};
+
+prepareScrollAnimation();
+
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -444,6 +489,8 @@ if(dot && ring){
         mouseX = e.clientX;
         mouseY = e.clientY;
 
+        dot.classList.add('is-active');
+        ring.classList.add('is-active');
         dot.style.left = mouseX + 'px';
         dot.style.top = mouseY + 'px';
     });
