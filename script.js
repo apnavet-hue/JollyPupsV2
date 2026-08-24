@@ -159,16 +159,16 @@ if (preloader) {
     preloader.classList.add("is-hidden");
     document.body.classList.remove("preloader-active");
     document.body.classList.remove("cinematic-intro-active");
-    window.setTimeout(() => preloader.remove(), 420);
+    window.setTimeout(() => preloader.remove(), 630);
   };
 
-  const finishPreloader = () => window.setTimeout(hidePreloader, prefersReducedMotion ? 80 : 2500);
+  const finishPreloader = () => window.setTimeout(hidePreloader, prefersReducedMotion ? 80 : 3750);
 
   if (document.readyState === "complete") {
     finishPreloader();
   } else {
     window.addEventListener("load", finishPreloader, { once: true });
-    window.setTimeout(hidePreloader, 5400);
+    window.setTimeout(hidePreloader, 8100);
   }
 }
 
@@ -427,7 +427,7 @@ const prepareScrollAnimation = () => {
     if (element.matches("main > section")) {
       element.classList.add("cinematic-section");
     }
-    element.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 95}ms`);
+    element.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 143}ms`);
   });
 };
 
