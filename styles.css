@@ -3349,8 +3349,10 @@ h2 {
 
 .grooming-gallery img {
   width: 100%;
+  height: clamp(240px, 22vw, 340px);
   aspect-ratio: 3 / 2;
-  object-fit: cover;
+  object-fit: contain;
+  background: rgba(255, 253, 242, 0.72);
 }
 
 .grooming-gallery h3 {
@@ -3776,6 +3778,10 @@ h2 {
   .grooming-gallery h3 {
     margin-top: 19px;
     font-size: 23px;
+  }
+
+  .grooming-gallery img {
+    height: 220px;
   }
 
   .service-flow-grid {
