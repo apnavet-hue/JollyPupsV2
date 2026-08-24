@@ -3,7 +3,20 @@ const NOTIFICATION_EMAIL = "jollypupsparadise@gmail.com";
 const SHEETS = {
   booking: {
     name: "Bookings",
-    headers: ["Timestamp", "Name", "Phone", "Care", "Service location", "Page", "User agent"],
+    headers: [
+      "Timestamp",
+      "Name",
+      "Phone",
+      "Pet name",
+      "Pet type",
+      "Care",
+      "Service location",
+      "Preferred date",
+      "Preferred time",
+      "Notes",
+      "Page",
+      "User agent",
+    ],
   },
   contact: {
     name: "ContactMessages",
@@ -63,7 +76,11 @@ function ensureSheets() {
       return value;
     });
 
-    if (!hasHeaders) {
+    const headersMatch = config.headers.every(function (header, index) {
+      return currentHeaders[index] === header;
+    });
+
+    if (!hasHeaders || !headersMatch) {
       sheet.getRange(1, 1, 1, config.headers.length).setValues([config.headers]);
       sheet.setFrozenRows(1);
     }
@@ -76,8 +93,13 @@ function appendBooking(payload) {
     new Date(),
     clean(payload.name),
     clean(payload.phone),
+    clean(payload.petName),
+    clean(payload.petType),
     clean(payload.care),
     clean(payload.serviceLocation),
+    clean(payload.preferredDate),
+    clean(payload.preferredTime),
+    clean(payload.notes),
     clean(payload.page),
     clean(payload.userAgent),
   ]);
@@ -109,8 +131,13 @@ function sendBookingEmail(payload) {
     "",
     "Name: " + clean(payload.name),
     "Phone: " + clean(payload.phone),
+    "Pet name: " + clean(payload.petName || "Not shared"),
+    "Pet type: " + clean(payload.petType || "Not selected"),
     "Care: " + clean(payload.care),
     "Service location: " + clean(payload.serviceLocation || "Not selected"),
+    "Preferred date: " + clean(payload.preferredDate || "Not selected"),
+    "Preferred time: " + clean(payload.preferredTime || "Not selected"),
+    "Notes: " + clean(payload.notes || "None"),
     "Page: " + clean(payload.page),
   ].join("\n");
 

@@ -136,6 +136,7 @@ const cartCount = document.querySelector(".cart-count");
 const cartLabel = document.querySelector(".cart-label");
 const locationField = document.querySelector(".service-location-field");
 const serviceLocationSelect = document.querySelector("[name='serviceLocation']");
+const preferredDateInput = document.querySelector("[name='preferredDate']");
 const locationChoiceServices = new Set([
   "Grooming",
   "Vet consultation",
@@ -153,6 +154,19 @@ const updateServiceLocationField = () => {
 
   if (!needsLocationChoice) {
     serviceLocationSelect.value = "";
+  }
+};
+
+const syncPreferredDate = () => {
+  if (!preferredDateInput) return;
+
+  const today = new Date();
+  today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+  const todayValue = today.toISOString().slice(0, 10);
+  preferredDateInput.min = todayValue;
+
+  if (!preferredDateInput.value) {
+    preferredDateInput.value = todayValue;
   }
 };
 
@@ -187,6 +201,7 @@ document.querySelectorAll(".js-book").forEach((button) => {
       if (matchingOption) careSelect.value = requestedService;
     }
     updateServiceLocationField();
+    syncPreferredDate();
     modal.showModal();
     document.body.classList.add("modal-open");
   });
@@ -272,8 +287,8 @@ if (bookingForm) {
     await submitToGoogleSheet(
       bookingForm,
       "booking",
-      "Request received.",
-      "Our care team will call you shortly.",
+      "Appointment request received.",
+      "Our care team will confirm your slot shortly.",
       () => {
         updateServiceLocationField();
         closeModal();

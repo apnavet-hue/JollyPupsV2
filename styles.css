@@ -1346,13 +1346,15 @@ h2 {
 }
 
 .booking-modal {
-  width: min(92vw, 550px);
+  width: min(94vw, 680px);
+  max-height: min(88vh, 760px);
   padding: 36px;
   border: 0;
   border-radius: 25px;
   color: var(--ink);
   background: var(--cream);
   box-shadow: 0 30px 100px rgba(7, 6, 4, 0.35);
+  overflow: auto;
 }
 
 .booking-modal::backdrop {
@@ -1374,19 +1376,60 @@ h2 {
   line-height: 1;
 }
 
-.booking-modal h2 {
+.booking-modal-intro h2 {
   font-size: 44px;
 }
 
-.booking-modal > p:not(.section-kicker) {
+.booking-modal-intro > p:not(.section-kicker) {
   margin: 14px 0 19px;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.55;
 }
 
+.booking-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.booking-steps li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid rgba(138, 106, 0, 0.2);
+  border-radius: 11px;
+  color: var(--moss);
+  background: rgba(255, 255, 255, 0.44);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.booking-steps span {
+  display: grid;
+  flex: 0 0 23px;
+  width: 23px;
+  height: 23px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--forest);
+  background: var(--coral);
+  font-size: 11px;
+}
+
 .booking-form {
   display: grid;
+  gap: 12px;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -1401,7 +1444,8 @@ h2 {
 }
 
 .booking-form input,
-.booking-form select {
+.booking-form select,
+.booking-form textarea {
   width: 100%;
   padding: 13px 14px;
   border: 1px solid var(--line);
@@ -1409,11 +1453,18 @@ h2 {
   outline: none;
   color: var(--ink);
   background: rgba(255, 255, 255, 0.56);
+  font: inherit;
 }
 
 .booking-form input:focus,
-.booking-form select:focus {
+.booking-form select:focus,
+.booking-form textarea:focus {
   border-color: var(--moss);
+}
+
+.booking-form textarea {
+  min-height: 92px;
+  resize: vertical;
 }
 
 .booking-form .button {
@@ -2149,11 +2200,22 @@ h2 {
   }
 
   .booking-modal {
+    width: min(94vw, 430px);
+    max-height: 86vh;
     padding: 28px 20px 22px;
+    border-radius: 20px;
   }
 
-  .booking-modal h2 {
-    font-size: 39px;
+  .booking-modal-intro h2 {
+    font-size: 34px;
+  }
+
+  .booking-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-grid {
+    grid-template-columns: 1fr;
   }
 }
 
