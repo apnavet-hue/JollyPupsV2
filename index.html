@@ -426,19 +426,30 @@
       fetchpriority="high"
       type="image/avif"
     />
-    <link rel="stylesheet" href="/styles.min.css?v=service-hero-2" media="(min-width: 701px)" />
+    <link rel="stylesheet" href="/styles.min.css?v=preloader-1" media="(min-width: 701px)" />
     <link
       rel="preload"
       as="style"
-      href="/styles.min.css?v=service-hero-2"
+      href="/styles.min.css?v=preloader-1"
       media="(max-width: 700px)"
       onload="this.onload=null;this.rel='stylesheet';this.media='all'"
     />
     <noscript>
-      <link rel="stylesheet" href="/styles.min.css?v=service-hero-2" />
+      <link rel="stylesheet" href="/styles.min.css?v=preloader-1" />
     </noscript>
   </head>
   <body>
+    <noscript><style>.pet-preloader{display:none!important}</style></noscript>
+    <div class="pet-preloader" role="status" aria-live="polite">
+      <div class="preloader-card">
+        <div class="preloader-mark" aria-hidden="true">
+          <img src="/assets/jolly-pups-logo-mark.webp" width="96" height="96" alt="" />
+        </div>
+        <strong>Preparing pet care</strong>
+        <div class="preloader-paws" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p>Getting tails, paws, and cozy stays ready.</p>
+      </div>
+    </div>
       
       
       
@@ -1031,6 +1042,6 @@
       <span>Our care team will call you shortly.</span>
     </div>
 
-    <script src="/script.js?v=booking-1" defer></script>
+    <script src="/script.js?v=preloader-1" defer></script>
   </body>
 </html>

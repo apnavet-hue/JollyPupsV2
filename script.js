@@ -124,6 +124,7 @@ const initPage = () => {
 redirectLegacyHtmlPath();
 initSharedHeader();
 
+const preloader = document.querySelector(".pet-preloader");
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
 const modal = document.querySelector(".booking-modal");
@@ -143,6 +144,25 @@ const locationChoiceServices = new Set([
   "Vaccinations",
   "Training",
 ]);
+
+if (preloader) {
+  document.body.classList.add("preloader-active");
+
+  const hidePreloader = () => {
+    preloader.classList.add("is-hidden");
+    document.body.classList.remove("preloader-active");
+    window.setTimeout(() => preloader.remove(), 420);
+  };
+
+  const finishPreloader = () => window.setTimeout(hidePreloader, 520);
+
+  if (document.readyState === "complete") {
+    finishPreloader();
+  } else {
+    window.addEventListener("load", finishPreloader, { once: true });
+    window.setTimeout(hidePreloader, 2400);
+  }
+}
 
 const updateServiceLocationField = () => {
   const careSelect = modal?.querySelector("[name='care']");

@@ -35,9 +35,20 @@
         rel="stylesheet"
       />
     </noscript>
-    <link rel="stylesheet" href="/styles.min.css?v=service-hero-2" />
+    <link rel="stylesheet" href="/styles.min.css?v=preloader-1" />
   </head>
   <body class="service-detail-page">
+    <noscript><style>.pet-preloader{display:none!important}</style></noscript>
+    <div class="pet-preloader" role="status" aria-live="polite">
+      <div class="preloader-card">
+        <div class="preloader-mark" aria-hidden="true">
+          <img src="/assets/jolly-pups-logo-mark.webp" width="96" height="96" alt="" />
+        </div>
+        <strong>Preparing pet care</strong>
+        <div class="preloader-paws" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p>Getting tails, paws, and cozy stays ready.</p>
+      </div>
+    </div>
     <div class="paw-progress">&#128062;</div>
     <div class="cursor-dot"></div>
     <div class="cursor-ring"></div>
@@ -289,6 +300,6 @@
     </dialog>
     <div class="toast" role="status" aria-live="polite"><strong>Request received.</strong><span>Our care team will call you shortly.</span></div>
     <script src="/service-pages.js?v=service-hero-2" defer></script>
-    <script src="/script.js?v=booking-1" defer></script>
+    <script src="/script.js?v=preloader-1" defer></script>
   </body>
 </html>
