@@ -158,13 +158,13 @@ if (preloader) {
     window.setTimeout(() => preloader.remove(), 420);
   };
 
-  const finishPreloader = () => window.setTimeout(hidePreloader, prefersReducedMotion ? 80 : 920);
+  const finishPreloader = () => window.setTimeout(hidePreloader, prefersReducedMotion ? 80 : 1300);
 
   if (document.readyState === "complete") {
     finishPreloader();
   } else {
     window.addEventListener("load", finishPreloader, { once: true });
-    window.setTimeout(hidePreloader, 2400);
+    window.setTimeout(hidePreloader, 3200);
   }
 }
 
@@ -420,7 +420,7 @@ const prepareScrollAnimation = () => {
     }
 
     element.classList.add("reveal");
-    element.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 70}ms`);
+    element.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 95}ms`);
   });
 };
 
@@ -435,7 +435,7 @@ const revealObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.14 }
+  { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
 );
 
 document.querySelectorAll(".reveal").forEach((element) => {

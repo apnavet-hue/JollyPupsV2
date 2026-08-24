@@ -60,7 +60,7 @@ body.preloader-active {
   opacity: 1;
   visibility: visible;
   overflow: hidden;
-  transition: opacity 520ms ease, visibility 520ms ease;
+  transition: opacity 680ms ease, visibility 680ms ease;
 }
 
 .pet-preloader::before,
@@ -77,14 +77,14 @@ body.preloader-active {
     repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 10px);
   opacity: 0.42;
   transform: translateX(-34%);
-  animation: introLightSweep 1.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: introLightSweep 2.45s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .pet-preloader::after {
   background:
     radial-gradient(circle at 50% 46%, transparent 0 22%, rgba(21, 18, 11, 0.18) 54%, rgba(21, 18, 11, 0.72) 100%);
   mix-blend-mode: multiply;
-  animation: introVignette 1.8s ease both;
+  animation: introVignette 2.35s ease both;
 }
 
 .pet-preloader.is-hidden {
@@ -107,7 +107,7 @@ body.preloader-active {
   box-shadow: 0 38px 110px rgba(21, 18, 11, 0.28);
   text-align: center;
   transform-origin: center;
-  animation: introCardRise 1.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: introCardRise 1.85s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .preloader-card::before,
@@ -138,8 +138,8 @@ body.preloader-active {
   background: var(--paper);
   box-shadow: 0 18px 44px rgba(21, 18, 11, 0.16);
   animation:
-    introLogoPush 1.15s cubic-bezier(0.22, 1, 0.36, 1) both,
-    preloaderFloat 1.7s ease-in-out 1.15s infinite;
+    introLogoPush 1.55s cubic-bezier(0.22, 1, 0.36, 1) both,
+    preloaderFloat 2.2s ease-in-out 1.55s infinite;
 }
 
 .preloader-mark img {
@@ -160,7 +160,7 @@ body.preloader-active {
   height: 10px;
   border-radius: 50%;
   background: var(--coral);
-  animation: preloaderPaw 900ms ease-in-out infinite;
+  animation: preloaderPaw 1150ms ease-in-out infinite;
 }
 
 .preloader-paws span:nth-child(2) {
@@ -4317,40 +4317,43 @@ body.cinematic-intro-active .announcement {
 body.cinematic-intro-complete main,
 body.cinematic-intro-complete .site-header,
 body.cinematic-intro-complete .announcement {
-  animation: pageCinemaIn 850ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: pageCinemaIn 1200ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .reveal {
   opacity: 0;
-  transform: translate3d(0, 34px, 0) scale(0.985);
-  filter: blur(8px);
+  transform: perspective(1000px) translate3d(0, 58px, -18px) rotateX(4deg) scale(0.965);
+  filter: blur(12px) saturate(0.92);
+  clip-path: inset(10% 0 0 0 round 18px);
   transition:
-    opacity 850ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 850ms cubic-bezier(0.22, 1, 0.36, 1),
-    filter 850ms cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 1250ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1250ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1250ms cubic-bezier(0.16, 1, 0.3, 1),
+    clip-path 1250ms cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: var(--reveal-delay, 0ms);
-  will-change: opacity, transform, filter;
+  will-change: opacity, transform, filter, clip-path;
 }
 
 .reveal:nth-child(2n) {
-  transform: translate3d(-18px, 36px, 0) scale(0.985);
+  transform: perspective(1000px) translate3d(-32px, 60px, -18px) rotateX(4deg) rotateY(-2deg) scale(0.965);
 }
 
 .reveal:nth-child(3n) {
-  transform: translate3d(18px, 36px, 0) scale(0.985);
+  transform: perspective(1000px) translate3d(32px, 60px, -18px) rotateX(4deg) rotateY(2deg) scale(0.965);
 }
 
 .reveal.is-visible,
 .service-card.reveal.is-visible,
 .service-card.show {
   opacity: 1;
-  transform: translate3d(0, 0, 0) scale(1);
-  filter: blur(0);
+  transform: perspective(1000px) translate3d(0, 0, 0) rotateX(0) rotateY(0) scale(1);
+  filter: blur(0) saturate(1);
+  clip-path: inset(0 0 0 0 round 0);
 }
 
 .service-card.reveal {
   opacity: 0;
-  transform: translate3d(0, 34px, 0) scale(0.985);
+  transform: perspective(1000px) translate3d(0, 58px, -18px) rotateX(4deg) scale(0.965);
 }
 
 .section-shell.reveal,
@@ -4359,7 +4362,7 @@ body.cinematic-intro-complete .announcement {
 .service-detail-hero.reveal,
 .market-hero.reveal,
 .contact-hero.reveal {
-  transform: translate3d(0, 26px, 0);
+  transform: perspective(1200px) translate3d(0, 42px, -14px) rotateX(3deg) scale(0.975);
 }
 
 .section-shell.reveal.is-visible,
@@ -4368,7 +4371,7 @@ body.cinematic-intro-complete .announcement {
 .service-detail-hero.reveal.is-visible,
 .market-hero.reveal.is-visible,
 .contact-hero.reveal.is-visible {
-  transform: translate3d(0, 0, 0);
+  transform: perspective(1200px) translate3d(0, 0, 0) rotateX(0) scale(1);
 }
 
 .hero-copy,
@@ -4380,19 +4383,19 @@ body.cinematic-intro-complete .announcement {
 
 body:not(.reduced-motion) .hero-copy,
 body:not(.reduced-motion) .page-hero-copy {
-  animation: heroCopyCinema 950ms 180ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: heroCopyCinema 1250ms 260ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 body:not(.reduced-motion) .hero-visual,
 body:not(.reduced-motion) .service-detail-media,
 body:not(.reduced-motion) .market-hero-image,
 body:not(.reduced-motion) .services-hero-art {
-  animation: heroVisualCinema 1050ms 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: heroVisualCinema 1400ms 360ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .section-heading.reveal h2,
 .reveal .section-kicker {
-  transition: transform 750ms cubic-bezier(0.22, 1, 0.36, 1), opacity 750ms ease;
+  transition: transform 1050ms cubic-bezier(0.16, 1, 0.3, 1), opacity 1050ms ease;
 }
 
 .section-heading.reveal:not(.is-visible) h2,
@@ -4444,9 +4447,10 @@ body:not(.reduced-motion) .services-hero-art {
   .reveal,
   .reveal:nth-child(2n),
   .reveal:nth-child(3n) {
-    transform: translate3d(0, 24px, 0);
-    filter: blur(4px);
-    transition-duration: 620ms;
+    transform: perspective(900px) translate3d(0, 36px, -12px) rotateX(3deg) scale(0.975);
+    filter: blur(6px) saturate(0.95);
+    clip-path: inset(7% 0 0 0 round 16px);
+    transition-duration: 900ms;
   }
 }
 
