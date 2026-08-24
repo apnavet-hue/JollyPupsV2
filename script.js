@@ -149,6 +149,10 @@ const locationChoiceServices = new Set([
 if (preloader) {
   document.body.classList.add("preloader-active");
   document.body.classList.add("cinematic-intro-active");
+  preloader.insertAdjacentHTML(
+    "afterbegin",
+    '<div class="cinematic-intro-title" aria-hidden="true"><span>Jolly Pups</span><span>Paradise</span><em>care that feels like family</em></div>'
+  );
 
   const hidePreloader = () => {
     document.body.classList.add("cinematic-intro-complete");
@@ -158,13 +162,13 @@ if (preloader) {
     window.setTimeout(() => preloader.remove(), 420);
   };
 
-  const finishPreloader = () => window.setTimeout(hidePreloader, prefersReducedMotion ? 80 : 1300);
+  const finishPreloader = () => window.setTimeout(hidePreloader, prefersReducedMotion ? 80 : 2500);
 
   if (document.readyState === "complete") {
     finishPreloader();
   } else {
     window.addEventListener("load", finishPreloader, { once: true });
-    window.setTimeout(hidePreloader, 3200);
+    window.setTimeout(hidePreloader, 5400);
   }
 }
 
@@ -420,6 +424,9 @@ const prepareScrollAnimation = () => {
     }
 
     element.classList.add("reveal");
+    if (element.matches("main > section")) {
+      element.classList.add("cinematic-section");
+    }
     element.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 95}ms`);
   });
 };
