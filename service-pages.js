@@ -89,7 +89,7 @@ const servicePages = {
   grooming: {
     service: "Grooming",
     eyebrow: "Dog and cat grooming",
-    title: "Dog and cat grooming.",
+    title: "Fresh coats, tidy trims, and gentle grooming.",
     description:
       "Bathing, coat care, trimming, nails, ears, and gentle handling for dogs and cats.",
     image: "/assets/jolly-pups-inclusive-hero.webp",
