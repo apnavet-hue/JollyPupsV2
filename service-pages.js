@@ -9,7 +9,9 @@ const servicePages = {
     title: "A playful farm day with calm supervision.",
     description:
       "Structured play, rest, enrichment, and handler attention for pets who need a safe daytime routine while you are busy.",
-    image: "/assets/jolly-pups-farm-daycare.webp",
+    image: "/assets/jolly-pups-daycare-hero-480.webp",
+    srcset: makeServiceSrcset("daycare-hero"),
+    sizes: serviceImageSizes,
     alt: "Dog enjoying supervised daycare at Jolly Pups Paradise",
     badge: "At the farm",
     stats: ["Matched playgroups", "Rest breaks", "Photo updates"],
@@ -38,7 +40,9 @@ const servicePages = {
     title: "A sleepover that still feels familiar.",
     description:
       "Clean sleeping areas, calm routines, feeding notes, and attentive handlers for short overnight stays.",
-    image: "/assets/jolly-pups-farm-boarding.webp",
+    image: "/assets/jolly-pups-overnight-boarding-hero-480.webp",
+    srcset: makeServiceSrcset("overnight-boarding-hero"),
+    sizes: serviceImageSizes,
     alt: "Comfortable pet boarding space at Jolly Pups Paradise",
     badge: "At the farm",
     stats: ["Clean suites", "Routine meals", "Night checks"],
@@ -129,7 +133,9 @@ const servicePages = {
     title: "Everyday manners built with patience.",
     description:
       "Positive, routine-friendly training for confidence, leash skills, handling, puppy basics, and better home manners.",
-    image: "/assets/jolly-pups-farm-hero.webp",
+    image: "/assets/jolly-pups-training-hero-480.webp",
+    srcset: makeServiceSrcset("training-hero"),
+    sizes: serviceImageSizes,
     alt: "Pet training session at Jolly Pups Paradise",
     badge: "At home or at farm",
     stats: ["Positive methods", "Home routines", "Parent coaching"],

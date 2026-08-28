@@ -151,7 +151,9 @@
         {
           "label": "Service image",
           "selector": "[data-service-image]",
-          "src": "/assets/jolly-pups-farm-daycare.webp",
+          "src": "/assets/jolly-pups-daycare-hero-480.webp",
+          "srcset": "/assets/jolly-pups-daycare-hero-480.webp 480w, /assets/jolly-pups-daycare-hero-720.webp 720w, /assets/jolly-pups-daycare-hero-960.webp 960w",
+          "sizes": "(max-width: 700px) 90vw, (max-width: 900px) 90vw, 960px",
           "alt": "Dog enjoying supervised daycare at Jolly Pups Paradise"
         }
       ]
@@ -180,7 +182,9 @@
         {
           "label": "Service image",
           "selector": "[data-service-image]",
-          "src": "/assets/jolly-pups-farm-boarding.webp",
+          "src": "/assets/jolly-pups-overnight-boarding-hero-480.webp",
+          "srcset": "/assets/jolly-pups-overnight-boarding-hero-480.webp 480w, /assets/jolly-pups-overnight-boarding-hero-720.webp 720w, /assets/jolly-pups-overnight-boarding-hero-960.webp 960w",
+          "sizes": "(max-width: 700px) 90vw, (max-width: 900px) 90vw, 960px",
           "alt": "Comfortable pet boarding space at Jolly Pups Paradise"
         }
       ]
@@ -333,7 +337,9 @@
         {
           "label": "Service image",
           "selector": "[data-service-image]",
-          "src": "/assets/jolly-pups-farm-hero.webp",
+          "src": "/assets/jolly-pups-training-hero-480.webp",
+          "srcset": "/assets/jolly-pups-training-hero-480.webp 480w, /assets/jolly-pups-training-hero-720.webp 720w, /assets/jolly-pups-training-hero-960.webp 960w",
+          "sizes": "(max-width: 700px) 90vw, (max-width: 900px) 90vw, 960px",
           "alt": "Pet training session at Jolly Pups Paradise"
         }
       ]
