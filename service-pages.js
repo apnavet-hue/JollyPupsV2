@@ -1,8 +1,6 @@
-const serviceHeroSrcset =
-  "/assets/jolly-pups-inclusive-hero-480.webp 480w, /assets/jolly-pups-inclusive-hero-720.webp 720w, /assets/jolly-pups-inclusive-hero-960.webp 960w";
-const serviceBoardSrcset =
-  "/assets/jolly-pups-inclusive-board-480.webp 480w, /assets/jolly-pups-inclusive-board-768.webp 768w, /assets/jolly-pups-inclusive-board-900.webp 900w, /assets/jolly-pups-inclusive-board-1100.webp 1100w, /assets/jolly-pups-inclusive-board-1440.webp 1440w";
-const serviceImageSizes = "(max-width: 700px) 90vw, (max-width: 900px) 90vw, 1100px";
+const serviceImageSizes = "(max-width: 700px) 90vw, (max-width: 900px) 90vw, 960px";
+const makeServiceSrcset = (name) =>
+  `/assets/jolly-pups-${name}-480.webp 480w, /assets/jolly-pups-${name}-720.webp 720w, /assets/jolly-pups-${name}-960.webp 960w`;
 
 const servicePages = {
   "pet-day-care": {
@@ -69,8 +67,8 @@ const servicePages = {
     title: "Longer stays with a routine you can trust.",
     description:
       "For holidays, work travel, and recovery support, we build a steady care plan around your pet's normal rhythm.",
-    image: "/assets/jolly-pups-inclusive-board.webp",
-    srcset: serviceBoardSrcset,
+    image: "/assets/jolly-pups-long-boarding-hero-480.webp",
+    srcset: makeServiceSrcset("long-boarding-hero"),
     sizes: serviceImageSizes,
     alt: "Pets resting during a longer boarding stay",
     badge: "At the farm",
@@ -100,8 +98,8 @@ const servicePages = {
     title: "Fresh coats, tidy trims, and gentle grooming.",
     description:
       "Bathing, coat care, trimming, nails, ears, and gentle handling for dogs and cats.",
-    image: "/assets/jolly-pups-inclusive-hero.webp",
-    srcset: serviceHeroSrcset,
+    image: "/assets/jolly-pups-grooming-hero-480.webp",
+    srcset: makeServiceSrcset("grooming-hero"),
     sizes: serviceImageSizes,
     alt: "Freshly groomed pet with a calm handler",
     badge: "At home or at farm",
@@ -160,8 +158,8 @@ const servicePages = {
     title: "Vet advice without unnecessary stress.",
     description:
       "Book practical veterinary guidance for routine concerns, wellness checks, follow-ups, and next-step decisions.",
-    image: "/assets/jolly-pups-inclusive-board-900.webp",
-    srcset: serviceBoardSrcset,
+    image: "/assets/jolly-pups-vet-consultation-hero-480.webp",
+    srcset: makeServiceSrcset("vet-consultation-hero"),
     sizes: serviceImageSizes,
     alt: "Calm pet care consultation",
     badge: "At home or at farm",
@@ -191,8 +189,8 @@ const servicePages = {
     title: "Vaccination visits made simple.",
     description:
       "Schedule core vaccines and boosters with gentle handling, clear reminders, and practical record support.",
-    image: "/assets/jolly-pups-inclusive-board-768.webp",
-    srcset: serviceBoardSrcset,
+    image: "/assets/jolly-pups-vaccinations-hero-480.webp",
+    srcset: makeServiceSrcset("vaccinations-hero"),
     sizes: serviceImageSizes,
     alt: "Pet vaccination support with gentle handling",
     badge: "At home or at farm",

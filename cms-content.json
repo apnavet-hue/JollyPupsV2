@@ -120,8 +120,8 @@
         {
           "label": "Services hero image",
           "selector": ".services-hero-art img",
-          "src": "/assets/jolly-pups-inclusive-hero-480.webp",
-          "srcset": "/assets/jolly-pups-inclusive-hero-480.webp 480w, /assets/jolly-pups-inclusive-hero-720.webp 720w, /assets/jolly-pups-inclusive-hero-960.webp 960w",
+          "src": "/assets/jolly-pups-services-hero-480.webp",
+          "srcset": "/assets/jolly-pups-services-hero-480.webp 480w, /assets/jolly-pups-services-hero-720.webp 720w, /assets/jolly-pups-services-hero-960.webp 960w",
           "sizes": "(max-width: 700px) 82vw, (max-width: 900px) 52vw, 960px",
           "alt": "Pets enjoying supervised care"
         }
@@ -209,9 +209,9 @@
         {
           "label": "Service image",
           "selector": "[data-service-image]",
-          "src": "/assets/jolly-pups-inclusive-board.webp",
-          "srcset": "/assets/jolly-pups-inclusive-board-480.webp 480w, /assets/jolly-pups-inclusive-board-768.webp 768w, /assets/jolly-pups-inclusive-board-900.webp 900w, /assets/jolly-pups-inclusive-board-1100.webp 1100w, /assets/jolly-pups-inclusive-board-1440.webp 1440w",
-          "sizes": "(max-width: 700px) 90vw, (max-width: 900px) 90vw, 1100px",
+          "src": "/assets/jolly-pups-long-boarding-hero-480.webp",
+          "srcset": "/assets/jolly-pups-long-boarding-hero-480.webp 480w, /assets/jolly-pups-long-boarding-hero-720.webp 720w, /assets/jolly-pups-long-boarding-hero-960.webp 960w",
+          "sizes": "(max-width: 700px) 90vw, (max-width: 900px) 90vw, 960px",
           "alt": "Pets resting during a longer boarding stay"
         }
       ]
@@ -240,8 +240,8 @@
         {
           "label": "Service image",
           "selector": "[data-service-image]",
-          "src": "/assets/jolly-pups-inclusive-hero.webp",
-          "srcset": "/assets/jolly-pups-inclusive-hero-480.webp 480w, /assets/jolly-pups-inclusive-hero-720.webp 720w, /assets/jolly-pups-inclusive-hero-960.webp 960w",
+          "src": "/assets/jolly-pups-grooming-hero-480.webp",
+          "srcset": "/assets/jolly-pups-grooming-hero-480.webp 480w, /assets/jolly-pups-grooming-hero-720.webp 720w, /assets/jolly-pups-grooming-hero-960.webp 960w",
           "sizes": "(max-width: 700px) 90vw, (max-width: 900px) 90vw, 960px",
           "alt": "Freshly groomed pet with a calm handler"
         }
@@ -271,9 +271,9 @@
         {
           "label": "Service image",
           "selector": "[data-service-image]",
-          "src": "/assets/jolly-pups-inclusive-board-900.webp",
-          "srcset": "/assets/jolly-pups-inclusive-board-480.webp 480w, /assets/jolly-pups-inclusive-board-768.webp 768w, /assets/jolly-pups-inclusive-board-900.webp 900w, /assets/jolly-pups-inclusive-board-1100.webp 1100w, /assets/jolly-pups-inclusive-board-1440.webp 1440w",
-          "sizes": "(max-width: 700px) 90vw, (max-width: 900px) 90vw, 1100px",
+          "src": "/assets/jolly-pups-vet-consultation-hero-480.webp",
+          "srcset": "/assets/jolly-pups-vet-consultation-hero-480.webp 480w, /assets/jolly-pups-vet-consultation-hero-720.webp 720w, /assets/jolly-pups-vet-consultation-hero-960.webp 960w",
+          "sizes": "(max-width: 700px) 90vw, (max-width: 900px) 90vw, 960px",
           "alt": "Calm pet care consultation"
         }
       ]
@@ -302,9 +302,9 @@
         {
           "label": "Service image",
           "selector": "[data-service-image]",
-          "src": "/assets/jolly-pups-inclusive-board-768.webp",
-          "srcset": "/assets/jolly-pups-inclusive-board-480.webp 480w, /assets/jolly-pups-inclusive-board-768.webp 768w, /assets/jolly-pups-inclusive-board-900.webp 900w, /assets/jolly-pups-inclusive-board-1100.webp 1100w, /assets/jolly-pups-inclusive-board-1440.webp 1440w",
-          "sizes": "(max-width: 700px) 90vw, (max-width: 900px) 90vw, 1100px",
+          "src": "/assets/jolly-pups-vaccinations-hero-480.webp",
+          "srcset": "/assets/jolly-pups-vaccinations-hero-480.webp 480w, /assets/jolly-pups-vaccinations-hero-720.webp 720w, /assets/jolly-pups-vaccinations-hero-960.webp 960w",
+          "sizes": "(max-width: 700px) 90vw, (max-width: 900px) 90vw, 960px",
           "alt": "Pet vaccination support with gentle handling"
         }
       ]
@@ -357,8 +357,8 @@
         {
           "label": "Marketplace hero image",
           "selector": ".market-hero-image img",
-          "src": "/assets/jolly-pups-inclusive-board-768.webp",
-          "srcset": "/assets/jolly-pups-inclusive-board-480.webp 480w, /assets/jolly-pups-inclusive-board-768.webp 768w, /assets/jolly-pups-inclusive-board-900.webp 900w, /assets/jolly-pups-inclusive-board-1100.webp 1100w, /assets/jolly-pups-inclusive-board-1440.webp 1440w",
+          "src": "/assets/jolly-pups-marketplace-hero-768.webp",
+          "srcset": "/assets/jolly-pups-marketplace-hero-480.webp 480w, /assets/jolly-pups-marketplace-hero-768.webp 768w, /assets/jolly-pups-marketplace-hero-1100.webp 1100w, /assets/jolly-pups-marketplace-hero-1440.webp 1440w",
           "sizes": "(max-width: 900px) 100vw, 1100px",
           "alt": "A calm shared care space for dogs and cats"
         }
@@ -420,8 +420,8 @@
         {
           "label": "Why Us proof image",
           "selector": ".why-proof-media img",
-          "src": "/assets/jolly-pups-inclusive-board-768.webp",
-          "srcset": "/assets/jolly-pups-inclusive-board-480.webp 480w, /assets/jolly-pups-inclusive-board-768.webp 768w, /assets/jolly-pups-inclusive-board-900.webp 900w, /assets/jolly-pups-inclusive-board-1100.webp 1100w, /assets/jolly-pups-inclusive-board-1440.webp 1440w",
+          "src": "/assets/jolly-pups-why-us-proof-768.webp",
+          "srcset": "/assets/jolly-pups-why-us-proof-480.webp 480w, /assets/jolly-pups-why-us-proof-768.webp 768w, /assets/jolly-pups-why-us-proof-1100.webp 1100w, /assets/jolly-pups-why-us-proof-1440.webp 1440w",
           "sizes": "(max-width: 900px) 100vw, 1100px",
           "alt": "Pets resting calmly in a shared care area"
         }
