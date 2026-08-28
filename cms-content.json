@@ -1,0 +1,410 @@
+{
+  "version": 1,
+  "updatedAt": "2026-08-28T00:00:00+05:30",
+  "global": {
+    "text": [
+      {
+        "label": "Top announcement",
+        "selector": ".announcement p",
+        "value": "Inclusive pet care, at the farm and home."
+      },
+      {
+        "label": "Primary booking button",
+        "selector": ".header-cta",
+        "mode": "html",
+        "value": "Book a stay <span>&nearr;</span>"
+      },
+      {
+        "label": "Footer description",
+        "selector": ".footer-brand p",
+        "value": "Warm, reliable pet daycare, boarding, grooming, vet consultation, vaccinations, and training for families in Gurugram."
+      },
+      {
+        "label": "Footer copyright",
+        "selector": ".footer-bottom p",
+        "value": "(c) 2026 Jolly Pups Paradise. Care that feels like family."
+      }
+    ],
+    "images": [
+      {
+        "label": "Header logo",
+        "selector": ".site-header .brand-logo",
+        "src": "/assets/jolly-pups-paradise-logo-final.webp?v=orig-1",
+        "alt": "Jolly Pups Paradise"
+      },
+      {
+        "label": "Footer logo",
+        "selector": ".site-footer .brand-logo",
+        "src": "/assets/jolly-pups-paradise-logo-final.webp?v=orig-1",
+        "alt": "Jolly Pups Paradise"
+      },
+      {
+        "label": "Search/social icon",
+        "selector": ".pet-preloader img",
+        "src": "/assets/jolly-pups-logo-mark.webp",
+        "alt": ""
+      }
+    ],
+    "links": [
+      {
+        "label": "Announcement link",
+        "selector": ".announcement a",
+        "href": "/services/",
+        "value": "Explore pet care"
+      },
+      {
+        "label": "Footer Instagram",
+        "selector": ".footer-social",
+        "href": "https://www.instagram.com/jollypupsparadise/",
+        "value": "Instagram"
+      }
+    ]
+  },
+  "pages": {
+    "/": {
+      "title": "Home",
+      "url": "/",
+      "text": [
+        {
+          "label": "Hero eyebrow",
+          "selector": ".hero-eyebrow",
+          "value": "Jolly Pups Paradise"
+        },
+        {
+          "label": "Hero headline",
+          "selector": ".hero h1",
+          "mode": "html",
+          "value": "Care that feels<br /><em>like family.</em>"
+        },
+        {
+          "label": "Hero description",
+          "selector": ".hero-description",
+          "mode": "html",
+          "value": "From playful pups to curious cats, we offer <strong>daycare, boarding, grooming, vet consultations, vaccinations, and training</strong> in the comfort of home or at the farm."
+        },
+        {
+          "label": "Hero primary button",
+          "selector": ".hero-actions .button-primary",
+          "mode": "html",
+          "value": "Plan a visit <span>&rarr;</span>"
+        }
+      ],
+      "images": [
+        {
+          "label": "Home hero image",
+          "selector": ".hero-image-wrap img",
+          "src": "/assets/jolly-pups-inclusive-hero-480.webp",
+          "srcset": "/assets/jolly-pups-inclusive-hero-480.webp 480w, /assets/jolly-pups-inclusive-hero-720.webp 720w, /assets/jolly-pups-inclusive-hero-960.webp 960w",
+          "alt": "Dog and cat receiving calm pet care at Jolly Pups Paradise"
+        }
+      ]
+    },
+    "/services/": {
+      "title": "Services",
+      "url": "/services/",
+      "text": [
+        {
+          "label": "Services headline",
+          "selector": ".services-page-hero h1",
+          "mode": "html",
+          "value": "Pet care for every routine."
+        },
+        {
+          "label": "Services intro",
+          "selector": ".services-page-hero p",
+          "value": "Choose farm-based care or at-home support from the Jolly Pups team."
+        }
+      ],
+      "images": [
+        {
+          "label": "Services hero image",
+          "selector": ".services-hero-art img",
+          "src": "/assets/jolly-pups-inclusive-hero-480.webp",
+          "srcset": "/assets/jolly-pups-inclusive-hero-480.webp 480w, /assets/jolly-pups-inclusive-hero-720.webp 720w, /assets/jolly-pups-inclusive-hero-960.webp 960w",
+          "alt": "Pets enjoying supervised care"
+        }
+      ]
+    },
+    "/services/pet-day-care/": {
+      "title": "Pet Day Care",
+      "url": "/services/pet-day-care/",
+      "text": [
+        {
+          "label": "Service eyebrow",
+          "selector": "[data-service-eyebrow]",
+          "value": "Farm daycare in Gurugram"
+        },
+        {
+          "label": "Service title",
+          "selector": "[data-service-title]",
+          "value": "A playful farm day with calm supervision."
+        },
+        {
+          "label": "Service description",
+          "selector": "[data-service-description]",
+          "value": "Structured play, rest, enrichment, and handler attention for pets who need a safe daytime routine while you are busy."
+        }
+      ],
+      "images": [
+        {
+          "label": "Service image",
+          "selector": "[data-service-image]",
+          "src": "/assets/jolly-pups-farm-daycare.webp",
+          "alt": "Dog enjoying supervised daycare at Jolly Pups Paradise"
+        }
+      ]
+    },
+    "/services/overnight-boarding/": {
+      "title": "Overnight Boarding",
+      "url": "/services/overnight-boarding/",
+      "text": [
+        {
+          "label": "Service eyebrow",
+          "selector": "[data-service-eyebrow]",
+          "value": "Safe farm boarding"
+        },
+        {
+          "label": "Service title",
+          "selector": "[data-service-title]",
+          "value": "A sleepover that still feels familiar."
+        },
+        {
+          "label": "Service description",
+          "selector": "[data-service-description]",
+          "value": "Clean sleeping areas, calm routines, feeding notes, and attentive handlers for short overnight stays."
+        }
+      ],
+      "images": [
+        {
+          "label": "Service image",
+          "selector": "[data-service-image]",
+          "src": "/assets/jolly-pups-farm-boarding.webp",
+          "alt": "Comfortable pet boarding space at Jolly Pups Paradise"
+        }
+      ]
+    },
+    "/services/long-pet-boarding/": {
+      "title": "Long Pet Boarding",
+      "url": "/services/long-pet-boarding/",
+      "text": [
+        {
+          "label": "Service eyebrow",
+          "selector": "[data-service-eyebrow]",
+          "value": "Extended stay care"
+        },
+        {
+          "label": "Service title",
+          "selector": "[data-service-title]",
+          "value": "Longer stays with a routine you can trust."
+        },
+        {
+          "label": "Service description",
+          "selector": "[data-service-description]",
+          "value": "For holidays, work travel, and recovery support, we build a steady care plan around your pet's normal rhythm."
+        }
+      ],
+      "images": [
+        {
+          "label": "Service image",
+          "selector": "[data-service-image]",
+          "src": "/assets/jolly-pups-inclusive-board.webp",
+          "alt": "Pets resting during a longer boarding stay"
+        }
+      ]
+    },
+    "/services/grooming/": {
+      "title": "Grooming",
+      "url": "/services/grooming/",
+      "text": [
+        {
+          "label": "Service eyebrow",
+          "selector": "[data-service-eyebrow]",
+          "value": "Dog and cat grooming"
+        },
+        {
+          "label": "Service title",
+          "selector": "[data-service-title]",
+          "value": "Fresh coats, tidy trims, and gentle grooming."
+        },
+        {
+          "label": "Service description",
+          "selector": "[data-service-description]",
+          "value": "Bathing, coat care, trimming, nails, ears, and gentle handling for dogs and cats."
+        }
+      ],
+      "images": [
+        {
+          "label": "Service image",
+          "selector": "[data-service-image]",
+          "src": "/assets/jolly-pups-inclusive-hero.webp",
+          "alt": "Freshly groomed pet with a calm handler"
+        }
+      ]
+    },
+    "/services/vet-consultation/": {
+      "title": "Vet Consultation",
+      "url": "/services/vet-consultation/",
+      "text": [
+        {
+          "label": "Service eyebrow",
+          "selector": "[data-service-eyebrow]",
+          "value": "Calm health guidance"
+        },
+        {
+          "label": "Service title",
+          "selector": "[data-service-title]",
+          "value": "Vet advice without unnecessary stress."
+        },
+        {
+          "label": "Service description",
+          "selector": "[data-service-description]",
+          "value": "Book practical veterinary guidance for routine concerns, wellness checks, follow-ups, and next-step decisions."
+        }
+      ],
+      "images": [
+        {
+          "label": "Service image",
+          "selector": "[data-service-image]",
+          "src": "/assets/jolly-pups-inclusive-board-900.webp",
+          "alt": "Calm pet care consultation"
+        }
+      ]
+    },
+    "/services/vaccinations/": {
+      "title": "Vaccinations",
+      "url": "/services/vaccinations/",
+      "text": [
+        {
+          "label": "Service eyebrow",
+          "selector": "[data-service-eyebrow]",
+          "value": "Vaccines and boosters"
+        },
+        {
+          "label": "Service title",
+          "selector": "[data-service-title]",
+          "value": "Vaccination visits made simple."
+        },
+        {
+          "label": "Service description",
+          "selector": "[data-service-description]",
+          "value": "Schedule core vaccines and boosters with gentle handling, clear reminders, and practical record support."
+        }
+      ],
+      "images": [
+        {
+          "label": "Service image",
+          "selector": "[data-service-image]",
+          "src": "/assets/jolly-pups-inclusive-board-768.webp",
+          "alt": "Pet vaccination support with gentle handling"
+        }
+      ]
+    },
+    "/services/training/": {
+      "title": "Training",
+      "url": "/services/training/",
+      "text": [
+        {
+          "label": "Service eyebrow",
+          "selector": "[data-service-eyebrow]",
+          "value": "Practical pet training"
+        },
+        {
+          "label": "Service title",
+          "selector": "[data-service-title]",
+          "value": "Everyday manners built with patience."
+        },
+        {
+          "label": "Service description",
+          "selector": "[data-service-description]",
+          "value": "Positive, routine-friendly training for confidence, leash skills, handling, puppy basics, and better home manners."
+        }
+      ],
+      "images": [
+        {
+          "label": "Service image",
+          "selector": "[data-service-image]",
+          "src": "/assets/jolly-pups-farm-hero.webp",
+          "alt": "Pet training session at Jolly Pups Paradise"
+        }
+      ]
+    },
+    "/marketplace/": {
+      "title": "Marketplace",
+      "url": "/marketplace/",
+      "text": [
+        {
+          "label": "Marketplace headline",
+          "selector": ".market-hero h1",
+          "value": "Pet essentials chosen with care."
+        },
+        {
+          "label": "Marketplace intro",
+          "selector": ".market-hero p",
+          "value": "Farm-tested food, toys, grooming supplies, and everyday care picks."
+        }
+      ],
+      "images": [
+        {
+          "label": "Marketplace hero image",
+          "selector": ".market-hero-image img",
+          "src": "/assets/jolly-pups-inclusive-board-768.webp",
+          "alt": "A calm shared care space for dogs and cats"
+        }
+      ]
+    },
+    "/contact/": {
+      "title": "Contact",
+      "url": "/contact/",
+      "text": [
+        {
+          "label": "Contact headline",
+          "selector": ".contact-hero h1",
+          "value": "Tell us what your pet needs."
+        },
+        {
+          "label": "Contact intro",
+          "selector": ".contact-hero p",
+          "value": "Call, message, or send a note and the care team will help you plan the right next step."
+        }
+      ],
+      "images": []
+    },
+    "/privacy/": {
+      "title": "Privacy",
+      "url": "/privacy/",
+      "text": [
+        {
+          "label": "Privacy headline",
+          "selector": ".page-hero h1",
+          "value": "Privacy Policy"
+        }
+      ],
+      "images": []
+    },
+    "/terms/": {
+      "title": "Terms",
+      "url": "/terms/",
+      "text": [
+        {
+          "label": "Terms headline",
+          "selector": ".page-hero h1",
+          "value": "Terms & Conditions"
+        }
+      ],
+      "images": []
+    },
+    "/faqs/": {
+      "title": "FAQs",
+      "url": "/faqs/",
+      "text": [
+        {
+          "label": "FAQ headline",
+          "selector": ".page-hero h1",
+          "mode": "html",
+          "value": "Helpful answers,<br /><em>before you book.</em>"
+        }
+      ],
+      "images": []
+    }
+  }
+}

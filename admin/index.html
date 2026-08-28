@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Jolly Pups Admin</title>
+    <link rel="stylesheet" href="/admin/admin.css?v=admin-1" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="brand" href="/admin/" aria-label="Jolly Pups admin">
+        <img src="/assets/jolly-pups-logo-mark.webp" width="44" height="44" alt="" />
+        <span>Jolly Pups Admin</span>
+      </a>
+      <nav class="page-list" id="pageList" aria-label="Editable pages"></nav>
+      <button class="ghost-button" id="addPageButton" type="button">Add page</button>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Static content manager</p>
+          <h1 id="pageTitle">Loading...</h1>
+        </div>
+        <div class="topbar-actions">
+          <button class="ghost-button" id="refreshButton" type="button">Reload JSON</button>
+          <button class="dark-button" id="publishButton" type="button">Publish to GitHub</button>
+        </div>
+      </header>
+
+      <section class="status-card" id="statusCard" role="status" aria-live="polite">
+        Loading content file...
+      </section>
+
+      <section class="settings-grid">
+        <label>
+          <span>GitHub owner</span>
+          <input id="githubOwner" autocomplete="off" value="apnavet-hue" />
+        </label>
+        <label>
+          <span>Repository</span>
+          <input id="githubRepo" autocomplete="off" value="JollyPupsV2" />
+        </label>
+        <label>
+          <span>Branch</span>
+          <input id="githubBranch" autocomplete="off" value="main" />
+        </label>
+        <label>
+          <span>GitHub token</span>
+          <input id="githubToken" type="password" autocomplete="off" placeholder="Paste token for this session" />
+        </label>
+      </section>
+
+      <section class="tabs" aria-label="Admin sections">
+        <button class="tab is-active" data-tab="content" type="button">Content</button>
+        <button class="tab" data-tab="images" type="button">Images</button>
+        <button class="tab" data-tab="links" type="button">Links</button>
+        <button class="tab" data-tab="details" type="button">Details</button>
+        <button class="tab" data-tab="scan" type="button">Scan page</button>
+        <button class="tab" data-tab="advanced" type="button">Advanced JSON</button>
+      </section>
+
+      <section class="panel is-active" id="contentPanel">
+        <div class="panel-head">
+          <h2>Text and details</h2>
+          <button class="ghost-button" data-add="text" type="button">Add text field</button>
+        </div>
+        <div class="editor-list" id="textEditors"></div>
+      </section>
+
+      <section class="panel" id="imagesPanel">
+        <div class="panel-head">
+          <h2>Images</h2>
+          <button class="ghost-button" data-add="images" type="button">Add image field</button>
+        </div>
+        <div class="editor-list" id="imageEditors"></div>
+      </section>
+
+      <section class="panel" id="linksPanel">
+        <div class="panel-head">
+          <h2>Links and buttons</h2>
+          <button class="ghost-button" data-add="links" type="button">Add link field</button>
+        </div>
+        <div class="editor-list" id="linkEditors"></div>
+      </section>
+
+      <section class="panel" id="detailsPanel">
+        <div class="panel-head">
+          <h2>Page details and attributes</h2>
+          <button class="ghost-button" data-add="attributes" type="button">Add attribute field</button>
+        </div>
+        <div class="editor-list" id="detailEditors"></div>
+      </section>
+
+      <section class="panel" id="scanPanel">
+        <div class="panel-head">
+          <h2>Find editable content</h2>
+          <button class="dark-button" id="scanButton" type="button">Scan preview</button>
+        </div>
+        <div class="preview-shell">
+          <iframe id="previewFrame" title="Selected page preview"></iframe>
+        </div>
+        <div class="scan-results" id="scanResults"></div>
+      </section>
+
+      <section class="panel" id="advancedPanel">
+        <div class="panel-head">
+          <h2>Advanced JSON</h2>
+          <div class="cluster">
+            <button class="ghost-button" id="applyJsonButton" type="button">Apply JSON</button>
+            <button class="ghost-button" id="exportButton" type="button">Export</button>
+            <label class="file-button">
+              Import
+              <input id="importInput" type="file" accept="application/json" />
+            </label>
+          </div>
+        </div>
+        <textarea id="advancedJson" spellcheck="false"></textarea>
+      </section>
+    </main>
+
+    <script src="/admin/admin.js?v=admin-1" defer></script>
+  </body>
+</html>
