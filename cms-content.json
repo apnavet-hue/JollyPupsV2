@@ -369,6 +369,32 @@
       ],
       "images": []
     },
+    "/why-us/": {
+      "title": "Why Us",
+      "url": "/why-us/",
+      "text": [
+        {
+          "label": "Why Us headline",
+          "selector": ".page-hero h1",
+          "mode": "html",
+          "value": "Pet care built around<br /><em>trust, routine, and joy.</em>"
+        },
+        {
+          "label": "Why Us intro",
+          "selector": ".page-hero p:last-child",
+          "value": "We combine open farm spaces, careful handling, at-home support, and clear parent updates so every pet gets care that fits their personality."
+        }
+      ],
+      "images": [
+        {
+          "label": "Why Us care image",
+          "selector": ".about-image img",
+          "src": "/assets/jolly-pups-inclusive-board-480.webp",
+          "srcset": "/assets/jolly-pups-inclusive-board-480.webp 480w, /assets/jolly-pups-inclusive-board-768.webp 768w, /assets/jolly-pups-inclusive-board-900.webp 900w, /assets/jolly-pups-inclusive-board-1100.webp 1100w, /assets/jolly-pups-inclusive-board-1440.webp 1440w",
+          "alt": "Dogs and a cat relaxing in a calm shared care space"
+        }
+      ]
+    },
     "/privacy/": {
       "title": "Privacy",
       "url": "/privacy/",

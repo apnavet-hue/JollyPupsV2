@@ -1,6 +1,6 @@
 // Paste the deployed Google Apps Script Web App URL here after setup.
 const GOOGLE_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxtk1_Vgil3cA7WaUumtSpvLlc-5EcHmSNGE_95X8Q9dRGVJi8NMzvuDHEZ7EMgESHC/exec";
-const cleanPageSlugs = new Set(["services", "marketplace", "contact", "privacy", "faqs", "terms"]);
+const cleanPageSlugs = new Set(["services", "marketplace", "contact", "privacy", "faqs", "terms", "why-us"]);
 
 const getSiteBasePath = () => {
   if (window.location.protocol === "file:") {
@@ -52,7 +52,8 @@ const applyCleanRoutes = () => {
     privacy: "privacy/",
     faqs: "faqs/",
     terms: "terms/",
-    about: "#about",
+    about: "why-us/",
+    "why-us": "why-us/",
     shop: "marketplace/#shop",
   };
 
@@ -90,6 +91,7 @@ const redirectLegacyHtmlPath = () => {
     "privacy.html": "privacy/",
     "faqs.html": "faqs/",
     "terms.html": "terms/",
+    "why-us.html": "why-us/",
   };
   const currentFile = window.location.pathname.split("/").pop();
   const cleanRoute = legacyRoutes[currentFile];
