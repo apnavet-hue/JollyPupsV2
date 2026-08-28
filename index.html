@@ -426,16 +426,16 @@
       fetchpriority="high"
       type="image/avif"
     />
-    <link rel="stylesheet" href="/styles.min.css?v=cinema-7" media="(min-width: 701px)" />
+    <link rel="stylesheet" href="/styles.min.css?v=cinema-8" media="(min-width: 701px)" />
     <link
       rel="preload"
       as="style"
-      href="/styles.min.css?v=cinema-7"
+      href="/styles.min.css?v=cinema-8"
       media="(max-width: 700px)"
       onload="this.onload=null;this.rel='stylesheet';this.media='all'"
     />
     <noscript>
-      <link rel="stylesheet" href="/styles.min.css?v=cinema-7" />
+      <link rel="stylesheet" href="/styles.min.css?v=cinema-8" />
     </noscript>
   </head>
   <body>
@@ -642,21 +642,32 @@
           <article class="service-card service-card-green reveal">
             <div class="service-card-inner">
               <div class="service-card-face service-card-front">
-                <span class="card-number">01</span>
-                <div class="service-icon">
-                  <svg viewBox="0 0 32 32" aria-hidden="true">
-                    <path d="M5 15 16 6l11 9" />
-                    <path d="M8 14v13h8v-7h8v7h4V14" />
-                    <path d="M12 27h4" />
-                  </svg>
+                <div class="service-card-media">
+                  <img
+                    src="/assets/jolly-pups-farm-daycare.webp"
+                    width="960"
+                    height="1440"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Dog enjoying supervised daycare at Jolly Pups Paradise"
+                  />
                 </div>
-                <h3>Day care &amp; enrichment</h3>
-                <p>
-                  Thoughtful activity, enrichment, rest breaks, and steady
-                  supervision in a clean, pet-friendly setting.
-                </p>
-                <a href="#journey">Book daycare <span>&nearr;</span></a>
-                <div class="card-orbit" aria-hidden="true"></div>
+                <div class="service-card-body">
+                  <span class="card-number">01</span>
+                  <div class="service-icon">
+                    <svg viewBox="0 0 32 32" aria-hidden="true">
+                      <path d="M5 15 16 6l11 9" />
+                      <path d="M8 14v13h8v-7h8v7h4V14" />
+                      <path d="M12 27h4" />
+                    </svg>
+                  </div>
+                  <h3>Day care &amp; enrichment</h3>
+                  <p>
+                    Thoughtful activity, enrichment, rest breaks, and steady
+                    supervision in a clean, pet-friendly setting.
+                  </p>
+                  <a href="#journey">Book daycare <span>&nearr;</span></a>
+                </div>
               </div>
             </div>
           </article>
@@ -664,21 +675,37 @@
           <article class="service-card service-card-green reveal">
             <div class="service-card-inner">
               <div class="service-card-face service-card-front">
-                <span class="card-number">02</span>
-                <div class="service-icon">
-                  <svg viewBox="0 0 32 32" aria-hidden="true">
-                    <path d="M8 10h20l-3 12H10L8 10Z" />
-                    <path d="M8 10 7 6H3" />
-                    <path d="M12 27a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM23 27a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" />
-                  </svg>
+                <div class="service-card-media">
+                  <picture>
+                    <source type="image/avif" srcset="/assets/jolly-pups-services-hero-480.avif 480w, /assets/jolly-pups-services-hero-720.avif 720w, /assets/jolly-pups-services-hero-960.avif 960w" sizes="(max-width: 700px) 90vw, (max-width: 900px) 90vw, 480px" />
+                    <img
+                      src="/assets/jolly-pups-services-hero-480.webp"
+                      srcset="/assets/jolly-pups-services-hero-480.webp 480w, /assets/jolly-pups-services-hero-720.webp 720w, /assets/jolly-pups-services-hero-960.webp 960w"
+                      sizes="(max-width: 700px) 90vw, (max-width: 900px) 90vw, 480px"
+                      width="960"
+                      height="1440"
+                      loading="lazy"
+                      decoding="async"
+                      alt="Dog and cat with a Jolly Pups care handler"
+                    />
+                  </picture>
                 </div>
-                <h3>At-home or farm services</h3>
-                <p>
-                  Grooming, vet consultations, vaccinations, and training can be
-                  booked at your home or at the farm.
-                </p>
-                <a href="services/">View packages <span>&nearr;</span></a>
-                <div class="card-orbit" aria-hidden="true"></div>
+                <div class="service-card-body">
+                  <span class="card-number">02</span>
+                  <div class="service-icon">
+                    <svg viewBox="0 0 32 32" aria-hidden="true">
+                      <path d="M8 10h20l-3 12H10L8 10Z" />
+                      <path d="M8 10 7 6H3" />
+                      <path d="M12 27a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM23 27a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" />
+                    </svg>
+                  </div>
+                  <h3>At-home or farm services</h3>
+                  <p>
+                    Grooming, vet consultations, vaccinations, and training can be
+                    booked at your home or at the farm.
+                  </p>
+                  <a href="services/">View packages <span>&nearr;</span></a>
+                </div>
               </div>
             </div>
           </article>
@@ -686,28 +713,38 @@
           <article class="service-card service-card-coral reveal">
             <div class="service-card-inner">
               <div class="service-card-face service-card-front">
-                <span class="card-number">03</span>
-                <div class="service-icon">
-                  <svg viewBox="0 0 32 32" aria-hidden="true">
-                    <path d="M5 27V10l11-6 11 6v17" />
-                    <path d="M10 27V16h12v11" />
-                    <path d="M14 27v-5h4v5" />
-                    <path d="M12 12h4M19 12h1" />
-                  </svg>
+                <div class="service-card-media">
+                  <picture>
+                    <source type="image/avif" srcset="/assets/jolly-pups-long-boarding-hero-480.avif 480w, /assets/jolly-pups-long-boarding-hero-720.avif 720w, /assets/jolly-pups-long-boarding-hero-960.avif 960w" sizes="(max-width: 700px) 90vw, (max-width: 900px) 90vw, 480px" />
+                    <img
+                      src="/assets/jolly-pups-long-boarding-hero-480.webp"
+                      srcset="/assets/jolly-pups-long-boarding-hero-480.webp 480w, /assets/jolly-pups-long-boarding-hero-720.webp 720w, /assets/jolly-pups-long-boarding-hero-960.webp 960w"
+                      sizes="(max-width: 700px) 90vw, (max-width: 900px) 90vw, 480px"
+                      width="960"
+                      height="1440"
+                      loading="lazy"
+                      decoding="async"
+                      alt="Pets relaxing in a clean long-stay boarding room"
+                    />
+                  </picture>
                 </div>
-                <h3>Pet boarding</h3>
-                <p>
-                  Overnight and long-stay plans with familiar routines, clean
-                  suites, and care shaped around your pet.
-                </p>
-                <a href="services/">Plan a stay <span>&nearr;</span></a>
-                <svg class="card-paw" viewBox="0 0 110 90" aria-hidden="true">
-                  <circle cx="31" cy="20" r="15" />
-                  <circle cx="78" cy="20" r="15" />
-                  <circle cx="17" cy="53" r="13" />
-                  <circle cx="92" cy="53" r="13" />
-                  <path d="M55 40c-19 0-31 13-31 27 0 13 12 17 21 11 7-5 13-5 20 0 9 6 21 2 21-11 0-14-12-27-31-27Z" />
-                </svg>
+                <div class="service-card-body">
+                  <span class="card-number">03</span>
+                  <div class="service-icon">
+                    <svg viewBox="0 0 32 32" aria-hidden="true">
+                      <path d="M5 27V10l11-6 11 6v17" />
+                      <path d="M10 27V16h12v11" />
+                      <path d="M14 27v-5h4v5" />
+                      <path d="M12 12h4M19 12h1" />
+                    </svg>
+                  </div>
+                  <h3>Pet boarding</h3>
+                  <p>
+                    Overnight and long-stay plans with familiar routines, clean
+                    suites, and care shaped around your pet.
+                  </p>
+                  <a href="services/">Plan a stay <span>&nearr;</span></a>
+                </div>
               </div>
             </div>
           </article>
