@@ -375,23 +375,42 @@
       "text": [
         {
           "label": "Why Us headline",
-          "selector": ".page-hero h1",
-          "mode": "html",
-          "value": "Pet care built around<br /><em>trust, routine, and joy.</em>"
+          "selector": ".why-hero h1",
+          "value": "Not just pet sitting. A calmer system for real pet parents."
         },
         {
           "label": "Why Us intro",
-          "selector": ".page-hero p:last-child",
-          "value": "We combine open farm spaces, careful handling, at-home support, and clear parent updates so every pet gets care that fits their personality."
+          "selector": ".why-hero-copy > p:not(.eyebrow)",
+          "value": "Jolly Pups Paradise is built for the moments that make families anxious: first daycare visits, long travel, grooming nerves, health checks, and pets who need a slower introduction."
+        },
+        {
+          "label": "Care code label",
+          "selector": ".why-hero-panel > span",
+          "value": "JPP care code"
+        },
+        {
+          "label": "Ledger headline",
+          "selector": ".why-ledger h2",
+          "value": "A care model you can inspect."
+        },
+        {
+          "label": "Proof headline",
+          "selector": ".why-proof h2",
+          "value": "Good care is mostly what happens between the photos."
+        },
+        {
+          "label": "CTA headline",
+          "selector": ".why-cta h2",
+          "value": "Book a trial visit or talk through your pet's routine."
         }
       ],
       "images": [
         {
-          "label": "Why Us care image",
-          "selector": ".about-image img",
-          "src": "/assets/jolly-pups-inclusive-board-480.webp",
+          "label": "Why Us proof image",
+          "selector": ".why-proof-media img",
+          "src": "/assets/jolly-pups-inclusive-board-768.webp",
           "srcset": "/assets/jolly-pups-inclusive-board-480.webp 480w, /assets/jolly-pups-inclusive-board-768.webp 768w, /assets/jolly-pups-inclusive-board-900.webp 900w, /assets/jolly-pups-inclusive-board-1100.webp 1100w, /assets/jolly-pups-inclusive-board-1440.webp 1440w",
-          "alt": "Dogs and a cat relaxing in a calm shared care space"
+          "alt": "Pets resting calmly in a shared care area"
         }
       ]
     },
