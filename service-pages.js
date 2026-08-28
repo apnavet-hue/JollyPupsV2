@@ -1,3 +1,9 @@
+const serviceHeroSrcset =
+  "/assets/jolly-pups-inclusive-hero-480.webp 480w, /assets/jolly-pups-inclusive-hero-720.webp 720w, /assets/jolly-pups-inclusive-hero-960.webp 960w";
+const serviceBoardSrcset =
+  "/assets/jolly-pups-inclusive-board-480.webp 480w, /assets/jolly-pups-inclusive-board-768.webp 768w, /assets/jolly-pups-inclusive-board-900.webp 900w, /assets/jolly-pups-inclusive-board-1100.webp 1100w, /assets/jolly-pups-inclusive-board-1440.webp 1440w";
+const serviceImageSizes = "(max-width: 700px) 90vw, (max-width: 900px) 90vw, 1100px";
+
 const servicePages = {
   "pet-day-care": {
     service: "Pet day care",
@@ -64,6 +70,8 @@ const servicePages = {
     description:
       "For holidays, work travel, and recovery support, we build a steady care plan around your pet's normal rhythm.",
     image: "/assets/jolly-pups-inclusive-board.webp",
+    srcset: serviceBoardSrcset,
+    sizes: serviceImageSizes,
     alt: "Pets resting during a longer boarding stay",
     badge: "At the farm",
     stats: ["Routine planning", "Regular updates", "Care continuity"],
@@ -93,6 +101,8 @@ const servicePages = {
     description:
       "Bathing, coat care, trimming, nails, ears, and gentle handling for dogs and cats.",
     image: "/assets/jolly-pups-inclusive-hero.webp",
+    srcset: serviceHeroSrcset,
+    sizes: serviceImageSizes,
     alt: "Freshly groomed pet with a calm handler",
     badge: "At home or at farm",
     stats: ["Dogs and cats", "Coat-safe products", "Patient handling"],
@@ -151,6 +161,8 @@ const servicePages = {
     description:
       "Book practical veterinary guidance for routine concerns, wellness checks, follow-ups, and next-step decisions.",
     image: "/assets/jolly-pups-inclusive-board-900.webp",
+    srcset: serviceBoardSrcset,
+    sizes: serviceImageSizes,
     alt: "Calm pet care consultation",
     badge: "At home or at farm",
     stats: ["Routine checks", "Follow-up advice", "Care clarity"],
@@ -180,6 +192,8 @@ const servicePages = {
     description:
       "Schedule core vaccines and boosters with gentle handling, clear reminders, and practical record support.",
     image: "/assets/jolly-pups-inclusive-board-768.webp",
+    srcset: serviceBoardSrcset,
+    sizes: serviceImageSizes,
     alt: "Pet vaccination support with gentle handling",
     badge: "At home or at farm",
     stats: ["Core vaccines", "Booster reminders", "Record support"],
@@ -243,6 +257,13 @@ const initServicePage = () => {
   setText("[data-service-name]", service.service);
 
   document.querySelectorAll("[data-service-image]").forEach((image) => {
+    if (service.srcset) {
+      image.srcset = service.srcset;
+      image.sizes = service.sizes || "";
+    } else {
+      image.removeAttribute("srcset");
+      image.removeAttribute("sizes");
+    }
     image.src = service.image;
     image.alt = service.alt;
   });
