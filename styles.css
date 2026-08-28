@@ -1043,9 +1043,22 @@ h2 {
   transition: transform .65s cubic-bezier(.22, 1, .36, 1);
 }
 
+.service-card-media-contain img {
+  padding: 8px;
+  object-fit: contain;
+  object-position: center;
+  transform: scale(1);
+  background: #fff8db;
+}
+
 .service-card:hover .service-card-media img,
 .service-card:focus-within .service-card-media img {
   transform: scale(0.985);
+}
+
+.service-card:hover .service-card-media-contain img,
+.service-card:focus-within .service-card-media-contain img {
+  transform: scale(1.015);
 }
 
 .service-card-body {
@@ -2196,6 +2209,10 @@ h2 {
     padding: 20px;
   }
 
+  .service-card-media-contain img {
+    padding: 6px;
+  }
+
   .service-card h3 {
     font-size: 27px;
   }
@@ -2618,10 +2635,10 @@ h2 {
 }
 
 .art-circle-main img {
-  object-fit: contain;
-  object-position: center;
-  transform: scale(0.92);
-  background: #fff8db;
+  object-fit: cover;
+  object-position: center 42%;
+  transform: none;
+  background: transparent;
 }
 
 .art-circle-small img {
@@ -3632,8 +3649,10 @@ h2 {
 }
 
 .why-proof-media img {
-  object-fit: cover;
-  object-position: center 46%;
+  padding: clamp(10px, 1.1vw, 16px);
+  object-fit: contain;
+  object-position: center;
+  background: #fff8db;
 }
 
 .why-proof-copy {
@@ -4186,6 +4205,10 @@ h2 {
 
   .why-proof-media {
     min-height: 330px;
+  }
+
+  .why-proof-media img {
+    padding: 6px;
   }
 
   .why-proof-copy {
