@@ -2069,7 +2069,7 @@ h2 {
     flex-direction: column;
     gap: 14px;
     min-height: 0;
-    padding: 88px 5vw 20px;
+    padding: 80px 5vw 20px;
   }
 
   .hero::before,
@@ -4176,6 +4176,7 @@ h2 {
 
 @media (max-width: 700px) {
   .inner-header {
+    position: relative;
     top: auto;
     min-height: 50px;
     padding-top: 6px;
