@@ -1630,8 +1630,7 @@ h2 {
   display: none;
 }
 
-.whatsapp-pill,
-.locate-pill {
+.whatsapp-pill {
   position: fixed;
   z-index: 8;
   top: 164px;
@@ -1651,40 +1650,25 @@ h2 {
 }
 
 .whatsapp-pill {
-  right: calc(50% - 12px);
-  left: auto;
+  right: auto;
+  left: 50%;
   background: #1f1b12;
-}
-
-.locate-pill {
-  left: calc(50% + 18px);
-  color: var(--forest-2);
-  background: var(--coral);
-}
-
-.hero > .whatsapp-pill,
-.hero > .locate-pill {
-  position: absolute;
-  top: 0;
-  bottom: auto;
+  transform: translateX(-50%);
 }
 
 .hero > .whatsapp-pill {
-  right: calc(50% - 12px);
-  left: auto;
+  position: absolute;
+  top: 0;
+  bottom: auto;
+  right: auto;
+  left: 50%;
 }
 
-.hero > .locate-pill {
-  left: calc(50% + 18px);
+.whatsapp-pill:hover {
+  transform: translateX(-50%) translateY(-3px);
 }
 
-.whatsapp-pill:hover,
-.locate-pill:hover {
-  transform: translateY(-3px);
-}
-
-.whatsapp-pill svg,
-.locate-pill svg {
+.whatsapp-pill svg {
   width: 22px;
   height: 22px;
   fill: none;
@@ -2539,8 +2523,7 @@ h2 {
     margin: 0;
   }
 
-  .whatsapp-pill,
-  .locate-pill {
+  .whatsapp-pill {
     top: 72px;
     min-height: 40px;
     padding: 9px 11px;
@@ -2551,12 +2534,7 @@ h2 {
     left: calc(50% - 138px);
   }
 
-  .locate-pill {
-    left: calc(50% + 3px);
-  }
-
-  .hero > .whatsapp-pill,
-  .hero > .locate-pill {
+  .hero > .whatsapp-pill {
     position: static;
     justify-content: center;
     align-self: stretch;
@@ -2568,12 +2546,7 @@ h2 {
     order: 0;
   }
 
-  .hero > .locate-pill {
-    order: 0;
-  }
-
-  .whatsapp-pill span,
-  .locate-pill span {
+  .whatsapp-pill span {
     display: inline;
   }
 
@@ -4910,8 +4883,7 @@ h2{
     white-space: normal;
   }
 
-  .hero > .whatsapp-pill,
-  .hero > .locate-pill {
+  .hero > .whatsapp-pill {
     position: static;
     inset: auto;
     align-self: stretch;
